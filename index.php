@@ -1,72 +1,131 @@
-<?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
- * @version 1.0
- */
+<?php  get_header(); ?>
 
-get_header(); ?>
+<?php require_once('components/navbar.inc.php'); ?>
 
-<div class="wrap">
-	<?php if ( is_home() && ! is_front_page() ) : ?>
-		<header class="page-header">
-			<h1 class="page-title"><?php single_post_title(); ?></h1>
-		</header>
-	<?php else : ?>
-	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
-	</header>
-	<?php endif; ?>
+    <!--Main Navigation-->
+    <header>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+        <!-- Intro -->
+        <div class="card card-intro blue-gradient mb-4">
 
-			<?php
-			if ( have_posts() ) :
+            <div class="card-body white-text rgba-black-light text-center pt-5 pb-4">
 
-				// Start the Loop.
-				while ( have_posts() ) :
-					the_post();
+                <!--Grid row-->
+                <div class="row d-flex justify-content-center">
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that
-					 * will be used instead.
-					 */
-					get_template_part( 'template-parts/post/content', get_post_format() );
+                    <!--Grid column-->
+                    <div class="col-md-6">
 
-				endwhile;
+                        <h1 class="font-weight-bold mb-4">Website Name</h1>
+                        <p class="lead mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ad impedit corporis ratione facere?
+                            Cupiditate unde aliquid reiciendis animi, quas inventore, praesentium neque voluptatem, iusto
+                            perferendis placeat similique dolor eum?
+                        </p>
 
-				the_posts_pagination(
-					array(
-						'prev_text'          => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-						'next_text'          => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-					)
-				);
+                    </div>
+                    <!--Grid column-->
 
-			else :
+                </div>
+                <!--Grid row-->
 
-				get_template_part( 'template-parts/post/content', 'none' );
+            </div>
 
-			endif;
-			?>
+        </div>
+        <!-- Intro -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+    </header>
+    <!--Main Navigation-->
 
-<?php
-get_footer();
+    <!--Main layout-->
+    <main>
+        <div class="container">
+
+            <!--Section: Dynamic Content Wrapper-->
+            <section>
+              <div id="dynamic-content"></div>
+
+            </section>
+            <!--Section: Dynamic Content Wrapper-->
+
+            <!--Section: Articles-->
+            <section class="text-center">
+
+                <!--Section heading-->
+                <h1 class="h2 font-weight-bold my-4">Recent articles</h1>
+
+                <?php 
+
+                // if ( have_posts() ) : 
+                //     while ( have_posts() ) : the_post();
+                //         the_content();
+                //         echo 'Hello';
+                //     endwhile;
+                // else :
+                //     _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
+                // endif;
+
+                ?>
+
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+                <?php
+                if ( have_posts() ) {
+                $counter = 1;
+                while ( have_posts() ) {
+                the_post();
+                ?>
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
+                            <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
+                            <a href="<?php echo get_permalink() ?>">
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+
+                        <!--Excerpt-->
+                        <a href="" class="pink-text">
+                            <h6 class="mb-3 mt-4">
+                                <i class="fa fa-bolt"></i>
+                                <strong> <?php the_category(', '); ?></strong>
+                            </h6>
+                        </a>
+                        <h4 class="mb-3 font-weight-bold dark-grey-text">
+                            <strong><?php the_title(); ?></strong>
+                        </h4>
+                        <p>by
+                            <a href="<?php echo get_permalink() ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
+                        <p class="grey-text"><?php the_excerpt(); ?></p>
+                        <a href="<?php echo get_permalink() ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                    </div>
+                    <!--Grid column-->
+
+                <?php
+                if ($counter % 3 == 0) {
+                ?>
+                </div>
+                <!--Grid row-->
+                <!--Grid dynamic row-->
+                <div class="row wow fadeIn">
+                <?php
+                }
+                $counter++;
+                } // end while
+                } // end if
+                ?>
+                </div>
+                <!--Grid row-->
+
+                <?php fleet_pagination(); ?>
+
+            </section>
+            <!--Section: Articles-->
+
+        </div>
+    </main>
+    <!--Main layout-->
+
+    
+<?php  get_footer(); ?>

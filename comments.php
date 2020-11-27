@@ -1,89 +1,158 @@
 <?php
 /**
- * The template for displaying comments
+ * The template for displaying Comments.
  *
- * This is the template that displays the area of the page that contains both the current comments
- * and the comment form.
+ * The area of the page that contains both current comments
+ * and the comment form. The actual display of comments is
+ * handled by a callback to shape_comment() which is
+ * located in the inc/template-tags.php file.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since Twenty Seventeen 1.0
- * @version 1.0
+ * @package Shape
+ * @since Shape 1.0
  */
-
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
-	return;
-}
 ?>
 
-<div id="comments" class="comments-area">
+    <?php
+    /*
+     * If the current post is protected by a password and
+     * the visitor has not yet entered the password we will
+     * return early without loading the comments.
+     */
+    if ( post_password_required() )
+        return;
+?>
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
-		?>
-		<h2 class="comments-title">
-			<?php
-			$comments_number = get_comments_number();
-			if ( '1' === $comments_number ) {
-				/* translators: %s: Post title. */
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'twentyseventeen' ), get_the_title() );
-			} else {
-				printf(
-					/* translators: 1: Number of comments, 2: Post title. */
-					_nx(
-						'%1$s Reply to &ldquo;%2$s&rdquo;',
-						'%1$s Replies to &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'twentyseventeen'
-					),
-					number_format_i18n( $comments_number ),
-					get_the_title()
-				);
-			}
-			?>
-		</h2>
+<div id="comments" class="">
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments(
-					array(
-						'avatar_size' => 100,
-						'style'       => 'ol',
-						'short_ping'  => true,
-						'reply_text'  => twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
-					)
-				);
-			?>
-		</ol>
+    <?php // You can start editing here -- including this comment! ?>
 
-		<?php
-		the_comments_pagination(
-			array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-			)
-		);
+        <?php if ( have_comments() ) : ?>
 
-	endif; // Check for have_comments().
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-		?>
+                    <div class="card card-comments mb-3 wow fadeIn">
+                        <div class="card-header font-weight-bold">
+                            <?php if(get_comment_pages_count() > 1) echo ' class="mb-1"';?> <?php echo (get_comments_number()) ? get_comments_number() : '';?> Comments
+                        </div>
 
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'twentyseventeen' ); ?></p>
-		<?php
-	endif;
+                        <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
+                            <nav role="navigation" id="comment-nav-above" class="site-navigation comment-navigation text-center mb-2">
 
-	comment_form();
-	?>
+                                    <?php previous_comments_link( __( '<i class="fa fa-caret-left left" aria-hidden="true"></i> Older Comments', 'shape' ) ); ?>
 
-</div><!-- #comments -->
+                                    <?php next_comments_link( __( 'Newer Comments <i class="fa fa-caret-right right" aria-hidden="true"></i>', 'shape' ) ); ?>
+
+                            </nav>
+                            <!-- #comment-nav-before .site-navigation .comment-navigation -->
+                            <?php endif; // check for comment navigation ?>
+                    <div class="card-body">
+
+                            <?php
+                                /* Loop through and list the comments. Tell wp_list_comments()
+                                 * to use shape_comment() to format the comments.
+                                 * If you want to overload this in a child theme then you can
+                                 * define shape_comment() and that will be used instead.
+                                 * See shape_comment() in inc/template-tags.php for more.
+                                 */
+                                wp_list_comments( array( 'callback' => 'shape_comment' ) );
+                            ?>
+
+                    </div>
+                        <!-- .commentlist -->
+
+                    </div>
+
+                    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through? If so, show navigation ?>
+                        <nav role="navigation" id="comment-nav-below" class="site-navigation comment-navigation text-center mb-2">
+                                <?php previous_comments_link( __( '<i class="fa fa-caret-left left" aria-hidden="true"></i> Older Comments', 'shape' ) ); ?>
+
+                                <?php next_comments_link( __( 'Newer Comments <i class="fa fa-caret-right right" aria-hidden="true"></i>', 'shape' ) ); ?>
+                        </nav>
+                        <!-- #comment-nav-below .site-navigation .comment-navigation -->
+                        <?php endif; // check for comment navigation ?>
+
+                            <?php endif; // have_comments() ?>
+
+                                <?php
+                                    // If comments are closed and there are comments, let's leave a little note, shall we?
+                                    if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+                                ?>
+                                    <p class="nocomments">
+                                        <?php _e( 'Comments are closed.', 'shape' ); ?>
+                                    </p>
+                                    <?php endif; ?>
+                                        <?php
+                                        $aria_req = ( $req ? " aria-required='true'" : '' );
+                                       $args = array(
+                                        'fields' => apply_filters(
+                                            'comment_form_default_fields', array(
+                                                'author' =>'
+
+                                                <!-- Name -->
+                                                <label for="name">'. __( 'Your name' ) . ( $req ? '<span class="required">*</span>' : '' )  .' </label>
+                                                <input type="text" id="author" name="author" class="form-control" value="' .
+                                                    esc_attr( $commenter['comment_author'] ) . '" '. $aria_req . '>
+                                                ',
+
+                                                'email'  => '
+                                                <!-- Email -->
+                                                <label for="email">'. __( 'Your email', 'domainreference' ) . ( $req ? '<span class="required">*</span>' : '' ). '</label>
+                                                <input type="text" id="email" name="email" class="form-control" ' . $aria_req .' value="' . esc_attr(  $commenter['comment_author_email'] ) .
+                                                    '">
+                                                '
+                                            )
+                                        ),
+                                        'comment_field' => (is_user_logged_in() ? '
+                                                            <!--Third row-->
+                                                            <div class="row">
+                                                                <!--Image column-->
+                                                                <div class="col-sm-2 col-xs-12">' .
+                                                                    get_avatar( get_current_user_id(), 100 ) .
+                                                                '</div>
+                                                                <!--/.Image column-->
+
+                                                                <!--Content column-->
+                                                                <div class="col-sm-10 col-12">
+
+                                                                    <!-- Comment -->
+                                                                    <div class="form-group">
+                                                                        <label for="comment">Your comment</label>
+                                                                        <textarea id="comment" name="comment" type="text"  class="form-control" rows="5"></textarea>
+                                                                    </div>
+
+
+                                                                </div>
+                                                                <!--/.Content column-->
+
+                                                            </div>
+                                                            <!--/.Third row-->': '
+                                                            <!-- Comment -->
+                                                            <div class="form-group">
+                                                                <label for="comment">Your comment</label>
+                                                                <textarea id="comment" name="comment" type="text"  class="form-control" rows="5"></textarea>
+                                                            </div>'),
+                                           'comment_notes_after' => '',
+                                           'comment_notes_before' => '',
+                                           'logged_in_as' => '<p class="text-center">('. sprintf(
+                                                            __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ),
+                                                              admin_url( 'profile.php' ),
+                                                              $user_identity,
+                                                              wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+                                                            ) . ')</p>  ',
+                                            'title_reply' => '',
+                                            'class_submit' => 'btn btn-info btn-md ',
+                                            'label_submit' => 'post '
+
+                                       );
+                                        ?>
+                                        <!--Leave a reply section-->
+                                        <div class="card mb-3 wow fadeIn">
+                                            <div class="card-header font-weight-bold">Leave a reply</div>
+                                            <div class="card-body">
+
+                                            <?php
+                                            comment_form($args ); ?>
+                                            </div>
+                                        </div>
+                                        <!--/.Leave a reply section-->
+</div>
+<!-- #comments .comments-area -->
