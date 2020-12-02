@@ -17,11 +17,11 @@
       <section  id="features" class="mb-5 container">
 
         <!--Section heading-->
-        <h1 class="mb-3 my-5 pt-5 dark-grey-text wow fadeIn text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Itqaan Features</h1>
+        <h1 class="mb-3 my-5 pt-5 dark-grey-text wow fadeIn text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Our Features</h1>
 
         <!--Section description-->
-        <p class="text-center grey-text w-responsive mx-auto mb-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-          Features description.</p>
+        <!-- <p class="text-center grey-text w-responsive mx-auto mb-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
+          Features description.</p> -->
 
         <!--First row-->
         <div class="row features wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
@@ -29,7 +29,7 @@
           <div class="col-lg-4 text-center">
             <div class="icon-area">
               <div class="circle-icon">
-                <i class="fas fa-cogs blue-text"></i>
+                <i class="fas fa-cogs blue-text fa-2x"></i>
               </div>
               <br>
               <h5 class="dark-grey-text font-weight-bold mt-2">Expert Teacher</h5>
@@ -44,7 +44,7 @@
           <div class="col-lg-4 text-center">
             <div class="icon-area">
               <div class="circle-icon">
-                <i class="fas fa-book blue-text"></i>
+                <i class="fas fa-book blue-text fa-2x"></i>
               </div>
               <br>
               <h5 class="dark-grey-text font-weight-bold mt-2">Good Content</h5>
@@ -59,7 +59,7 @@
           <div class="col-lg-4 text-center mb-4">
             <div class="icon-area">
               <div class="circle-icon">
-                <i class="fas fa-users blue-text"></i>
+                <i class="fas fa-users blue-text fa-2x"></i>
               </div>
               <br>
               <h5 class="dark-grey-text font-weight-bold mt-2">Excellent support</h5>

@@ -4,7 +4,7 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand pt-0 waves-effect" href="">
-                    <img src="https://mdbootstrap.com/img/logo/mdb-noshadow-38px" alt="MDB logo">
+                    <img height="48px" src="http://itqaan.org/wp-content/uploads/2020/12/ITQAN_logo.png" alt="Itqaan logo">
                 </a>
 
                 <!-- Collapse -->
@@ -43,21 +43,21 @@
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
-                            <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+                            <a href="https://www.facebook.com/itqaan" class="nav-link waves-effect" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+                            <a href="https://twitter.com/itqaan" class="nav-link waves-effect" target="_blank">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="https://github.com/mdbootstrap/material-design-for-bootstrap" class="nav-link border border-light rounded waves-effect"
                                 target="_blank">
                                 <i class="fa fa-github mr-2"></i>MDB GitHub
                             </a>
-                        </li>
+                        </li> -->
                     </ul>
 
                 </div>
