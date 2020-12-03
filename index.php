@@ -3,7 +3,7 @@
 <?php require_once('components/navbar.inc.php'); ?>
 </div>
     <!--Main Navigation-->
-    <header>
+    <header style="margin-top: 4rem">
         <?php
     echo do_shortcode('[smartslider3 slider="4"]');
     ?>
