@@ -28,7 +28,7 @@
 
         <?php
           global $post;
-          $args = array( 'posts_per_page' => -1, 'post_type'=> 'posttype', 'orderby' => 'menu_order', 'order' => 'ASC' );
+          $args = array( 'posts_per_page' => 5, 'post_type'=> 'features', 'orderby' => 'menu_order', 'order' => 'ASC' );
           $myposts = get_posts( $args );
           foreach( $myposts as $post ) : setup_postdata($post); ?>
           
