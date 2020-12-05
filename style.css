@@ -7,6 +7,42 @@ Author: Abdullah Al Harun
 Author URI: https://github.com/abdullahalharun/
 */
 
+
+/* Nav style */
+.menu-item a{
+	padding-right: .5rem;
+    padding-left: .5rem;
+    
+    padding: .5rem 1rem;
+    color: #000;
+}
+
+.current-menu-item{
+	background-color: rgba(0,0,0,0.1);
+}
+
+ul .sub-menu{
+	position: absolute;
+    margin-top: 0;
+	list-style: none;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.3s;
+	background: #fff;
+	width: 240px;
+	float: none;
+	padding-left: 0;
+}
+li:hover ul.sub-menu{
+	opacity: 1;
+	visibility: visible;
+	z-index: 99;
+	margin-top: 0;
+}
+
+
+
+
 .agency .mask.rgba-gradient {
     background: -webkit-linear-gradient(45deg,rgba(29,236,197,.7),rgba(91,14,214,.7) 100%);
     background: -webkit-gradient(linear,45deg,from(rgba(29,236,197,.7)),to(rgba(91,14,214,.7)));
@@ -33,7 +69,7 @@ Author URI: https://github.com/abdullahalharun/
 	  border-radius: 0 !important; }
   
   .navbar-brand img {
-	height: 20px; }
+	height: 40px; }
   
   .pagination .page-item.active .page-link {
 	background-color: #09c; }

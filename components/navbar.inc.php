@@ -16,8 +16,18 @@
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+                <?php
+                    wp_nav_menu(
+                        array(
+                            'theme_location' => 'menu-1',
+                            'menu_class'     => 'navbar-nav mr-auto',
+                        )
+                    );
+                    ?>
+
+
                     <!-- Left -->
-                    <ul class="navbar-nav mr-auto">
+                    <!-- <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
                             <a class="nav-link waves-effect" href="#">Home
                                 <span class="sr-only">(current)</span>
@@ -38,8 +48,8 @@
                         <li class="nav-item">
                             <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Link</a>
                         </li>
-                    </ul>
-
+                    </ul> -->
+                </div>
                     <!-- Right -->
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
@@ -60,7 +70,7 @@
                         </li> -->
                     </ul>
 
-                </div>
+                
 
             </div>
         </nav>
