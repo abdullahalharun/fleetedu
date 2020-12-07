@@ -28,20 +28,30 @@
 
         <?php
           global $post;
-          $args = array( 'posts_per_page' => 5, 'post_type'=> 'features', 'orderby' => 'menu_order', 'order' => 'ASC' );
+          $args = array( 'posts_per_page' => 5, 'post_type'=> 'feature', 'orderby' => 'menu_order', 'order' => 'ASC' );
           $myposts = get_posts( $args );
           foreach( $myposts as $post ) : setup_postdata($post); ?>
           
           <?php 
-            $job_link= get_post_meta($post->ID, 'job_instructions', true); 
+            $feature_icon = get_post_meta($post->ID, 'feature_icon', true); 
           ?>
-          
-              <h2><?php the_title(); ?></h2>
-              <?php the_content(); ?>
-              <p><?php echo $job_link; ?></p>
+                        
+              <div class="col-lg-4 text-center mb-4">
+                <div class="icon-area">
+                  <div class="circle-icon">
+                    <i class="<?php echo $feature_icon; ?> blue-text fa-2x"></i>
+                  </div>
+                  <br>
+                  <h5 class="dark-grey-text font-weight-bold mt-2"><?php the_title(); ?></h5>
+                  <div class="mt-1">
+                    <div class="mx-3 grey-text"><?php the_content(); ?></div>
+                  </div>
+                </div>
+              </div>
+
           <?php endforeach; wp_reset_query(); ?>
 
-          <div class="col-lg-4 text-center">
+          <!-- <div class="col-lg-4 text-center">
             <div class="icon-area">
               <div class="circle-icon">
                 <i class="fas fa-cogs blue-text fa-2x"></i>
@@ -84,54 +94,15 @@
                   amet, consectetur adipisicing elit.</p>
               </div>
             </div>
-          </div>
+          </div> -->
 
         </div>
         <!--/First row-->
 
       </section>
 
-
-      <!-- About Section -->
-    <section style="background-color: #f7f7f7; padding-top: 1rem" id="about" class="mt-4">
-    <div class="container">
-        <!--Secion heading-->
-        <h2 class="text-center my-5 font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Why Itqaan</h2>
-
-        <!--First row-->
-        <div class="row">
-
-        <!--First column-->
-        <div class="col-lg-5 col-md-12 mb-5 pb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-            <!--Image-->
-            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20%289%29.jpg" class="img-fluid z-depth-1 rounded" alt="My photo">
-
-        </div>
-        <!--First column-->
-
-        <!--Second column-->
-        <div class="col-lg-6 dark-grey-text ml-lg-auto col-md-12 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-            <!--Description-->
-            <p align="justify">এক রৌদ্রতপ্ত দিনে রাসূলুল্লাহ সাঃ মীনায় আগত হাজ্জ্বযাত্রীদের মাঝে ইসলামের দাওয়াহ দিচ্ছিলেন। তাদের কারও থেকে তিনি পাচ্ছিলেন খুব রুক্ষ আচরণ, কেউবা আবার করছিল তিরষ্কার আর কেউ করছিল ব্যঙ্গ-বিদ্রুপ। এক পর্যায়ে কিছু মানুষ তাঁর মাথায় মাটি ছুঁড়ে মারে। দীর্ঘক্ষণ দাওয়াহ দেওয়ার পর ক্লান্ত-শ্রান্ত শরীরে এমন চূড়ান্ত ন্যাক্কারজনক আচরণ পেয়ে তিনি এক জায়গায় বসে পড়লেন। এই অবস্থায় তাঁর প্রাণপ্রিয় কন্যা জায়নাব রাঃ তাঁকে দেখতে পেয়ে দৌড়ে আসলেন এবং বাবার মাথা থেকে মাটি পরিষ্কার করতে করতে কাঁদো কাঁদো গলায় বললেন, “একটি জাতি কীভাবে আল্লাহর রাসূলের সাথে এমন আচরণ করতে পারে?”
-            </p>
-
-            <p align="justify">জায়নাব রাঃ এর কণ্ঠে একরাশ আক্ষেপ আর বুকভরা কষ্ট যেন ঠিকরে পড়ছে! এই অবস্থায় সায়্যিদুল মুরসালিন রাসূলুল্লাহ সাঃ কী বলেছিলেন তাঁর প্রাণপ্রিয় কন্যাকে ? </p>
-
-            
-            <a href="<?php get_permalink() ?>/whay-itqaan" class="black-text d-flex flex-row-reverse">
-                <button class="btn btn-info">Read More</button>        
-            </a>
-        </div>
-        <!--Second column-->
-
-        </div>
-        <!--First row-->
-    </div>
-    </section>
-
-      <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
+    <!-- Quotation Section -->
+    <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
       <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">
         <div class="text-center white-text">
           <h2 class="h2-responsive mb-5">
@@ -142,16 +113,16 @@
           <h5 class="text-center font-italic " data-wow-delay="0.2s">~ Erich Fromm</h5>
         </div>
       </div>
-    </div>  
+    </div>
 
-<!-- Our courses -->
-<div class="container-fluid background-r">
+      <!-- Our courses Section -->
+    <div style="background-color: #f7f7f7;" class="container-fluid background-r">
       <div class="container py-3">
 
         <!--Section: Blog v.2-->
         <section class="extra-margins text-center">
 
-          <h2 class="text-center mb-5 my-5 pt-4 pb-4 font-weight-bold"> Top courses</h2>
+          <h2 class="text-center mb-5 my-5 pt-4 pb-4 font-weight-bold">Our courses</h2>
 
           <!--Grid row-->
           <div class="row mb-5 pb-3">
@@ -320,6 +291,49 @@
 
       </div>
     </div>
+
+
+      <!-- About Section -->
+    <section style="background-color: #f7f7f7; padding-top: 1rem" id="about" class="mt-4 d-none">
+    <div class="container">
+        <!--Secion heading-->
+        <h2 class="text-center my-5 font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Why Itqaan</h2>
+
+        <!--First row-->
+        <div class="row">
+
+        <!--First column-->
+        <div class="col-lg-5 col-md-12 mb-5 pb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+
+            <!--Image-->
+            <img src="https://mdbootstrap.com/img/Photos/Horizontal/Architecture/4-col/img%20%289%29.jpg" class="img-fluid z-depth-1 rounded" alt="My photo">
+
+        </div>
+        <!--First column-->
+
+        <!--Second column-->
+        <div class="col-lg-6 dark-grey-text ml-lg-auto col-md-12 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+
+            <!--Description-->
+            <p align="justify">এক রৌদ্রতপ্ত দিনে রাসূলুল্লাহ সাঃ মীনায় আগত হাজ্জ্বযাত্রীদের মাঝে ইসলামের দাওয়াহ দিচ্ছিলেন। তাদের কারও থেকে তিনি পাচ্ছিলেন খুব রুক্ষ আচরণ, কেউবা আবার করছিল তিরষ্কার আর কেউ করছিল ব্যঙ্গ-বিদ্রুপ। এক পর্যায়ে কিছু মানুষ তাঁর মাথায় মাটি ছুঁড়ে মারে। দীর্ঘক্ষণ দাওয়াহ দেওয়ার পর ক্লান্ত-শ্রান্ত শরীরে এমন চূড়ান্ত ন্যাক্কারজনক আচরণ পেয়ে তিনি এক জায়গায় বসে পড়লেন। এই অবস্থায় তাঁর প্রাণপ্রিয় কন্যা জায়নাব রাঃ তাঁকে দেখতে পেয়ে দৌড়ে আসলেন এবং বাবার মাথা থেকে মাটি পরিষ্কার করতে করতে কাঁদো কাঁদো গলায় বললেন, “একটি জাতি কীভাবে আল্লাহর রাসূলের সাথে এমন আচরণ করতে পারে?”
+            </p>
+
+            <p align="justify">জায়নাব রাঃ এর কণ্ঠে একরাশ আক্ষেপ আর বুকভরা কষ্ট যেন ঠিকরে পড়ছে! এই অবস্থায় সায়্যিদুল মুরসালিন রাসূলুল্লাহ সাঃ কী বলেছিলেন তাঁর প্রাণপ্রিয় কন্যাকে ? </p>
+
+            
+            <a href="<?php get_permalink() ?>/whay-itqaan" class="black-text d-flex flex-row-reverse">
+                <button class="btn btn-info">Read More</button>        
+            </a>
+        </div>
+        <!--Second column-->
+
+        </div>
+        <!--First row-->
+    </div>
+    </section>
+
+      
+
 
     <!-- Some stat section -->
     <div class="streak streak-photo streak-long-2" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full page/img%20%287%29.jpg')">
