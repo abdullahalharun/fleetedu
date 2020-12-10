@@ -5,7 +5,7 @@
     <!--Main Navigation-->
     <header style="margin-top: 4rem">
         <?php
-    echo do_shortcode('[smartslider3 slider="4"]');
+    echo do_shortcode('[smartslider3 slider="2"]');
     ?>
         
     </header>
@@ -106,11 +106,11 @@
       <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">
         <div class="text-center white-text">
           <h2 class="h2-responsive mb-5">
-            <i class="fas fa-quote-left" aria-hidden="true"></i> Creativity requires the courage to let go of
-            certainties
+            <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যাক্তি আল্লাহকে ও আখিরাতে ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।
             <i class="fas fa-quote-right" aria-hidden="true"></i>
           </h2>
-          <h5 class="text-center font-italic " data-wow-delay="0.2s">~ Erich Fromm</h5>
+
+          <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
         </div>
       </div>
     </div>
@@ -134,7 +134,7 @@
               <div class="card">
                 <!--Card image-->
                 <div class="view overlay">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/images/51.jpg" class="card-img-top" alt="">
+                  <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt="">
                   <a>
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
                   </a>
@@ -145,7 +145,7 @@
 
                   <!--Title-->
                   <h4 class="card-title darkgrey-text">
-                    <strong>Economy</strong>
+                    <strong>Management Lessons from the Life of Rasulullah</strong>
                   </h4>
                   <hr>
                   <!--Text-->
@@ -184,7 +184,7 @@
 
                   <!--Title-->
                   <h4 class="card-title darkgrey-text">
-                    <strong>Chemistry</strong>
+                    <strong>Management Lessons from the Life of the Sahaba</strong>
                   </h4>
                   <hr>
                   <!--Text-->
@@ -212,7 +212,7 @@
               <div class="card">
                 <!--Card image-->
                 <div class="view overlay">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/images/56.jpg" class="card-img-top" alt="">
+                  <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt="">
                   <a>
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
                   </a>
@@ -224,7 +224,7 @@
 
                   <!--Title-->
                   <h4 class="card-title darkgrey-text">
-                    <strong>Journalism</strong>
+                    <strong>Employee Ethics & Employability Skills</strong>
                   </h4>
                   <hr>
                   <!--Text-->
@@ -251,7 +251,7 @@
               <div class="card">
                 <!--Card image-->
                 <div class="view overlay">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/images/57.jpg" class="card-img-top" alt="">
+                  <img src="http://itqaan.org/wp-content/uploads/2018/08/pexels-photo-574071.jpeg" class="card-img-top" alt="">
                   <a>
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
                   </a>
@@ -262,7 +262,7 @@
 
                   <!--Title-->
                   <h4 class="card-title darkgrey-text">
-                    <strong>Computer science</strong>
+                    <strong>Leadership Lesson: A Prophetic Guideline</strong>
                   </h4>
                   <hr>
                   <!--Text-->
@@ -374,7 +374,7 @@
     </div>
 
       <!-- Our faculties -->
-      <section class="team-section pb-5 container" id="team">
+      <section class="team-section pb-5 container d-none" id="team">
 
         <!-- Section heading -->
         <h3 class="text-center title my-5 dark-grey-text font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
