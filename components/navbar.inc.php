@@ -58,8 +58,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="https://twitter.com/itqaan" class="nav-link waves-effect" target="_blank">
-                                <i class="fab fa-twitter"></i>
+                            <a href="https://www.youtube.com/channel/UC-8UcK4vvZGCCY-XeUHLcvg" class="nav-link waves-effect" target="_blank">
+                                <i class="fab fa-youtube"></i>
                             </a>
                         </li>
                         <!-- <li class="nav-item">

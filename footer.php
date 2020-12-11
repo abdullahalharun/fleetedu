@@ -11,11 +11,13 @@
       <!-- Grid column -->
       <div class="col-md-4 mx-auto">
 
+        <?php dynamic_sidebar( 'footer-1' ); ?>
+
         <!-- Content -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
+        <!-- <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Footer Content</h5>
         <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
           consectetur
-          adipisicing elit.</p>
+          adipisicing elit.</p> -->
 
       </div>
       <!-- Grid column -->
@@ -25,23 +27,7 @@
       <!-- Grid column -->
       <div class="col-md-2 mx-auto">
 
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
+        <?php dynamic_sidebar( 'footer-2' ); ?>
 
       </div>
       <!-- Grid column -->
@@ -50,25 +36,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
+        <?php dynamic_sidebar( 'footer-3' ); ?>
       </div>
       <!-- Grid column -->
 
@@ -76,25 +44,7 @@
 
       <!-- Grid column -->
       <div class="col-md-2 mx-auto">
-
-        <!-- Links -->
-        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Links</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul>
-
+        <?php dynamic_sidebar( 'footer-4' ); ?>
       </div>
       <!-- Grid column -->
 
@@ -122,7 +72,7 @@
   <!-- Social buttons -->
   <ul class="list-unstyled list-inline text-center">
     <li class="list-inline-item">
-      <a class="btn-floating btn-fb mx-1">
+      <a href="https://www.facebook.com/Itqaan" class="btn-floating btn-fb mx-1">
         <i class="fab fa-facebook-f"> </i>
       </a>
     </li>
@@ -131,7 +81,7 @@
         <i class="fab fa-twitter"> </i>
       </a>
     </li>
-    <li class="list-inline-item">
+    <!-- <li class="list-inline-item">
       <a class="btn-floating btn-gplus mx-1">
         <i class="fab fa-google-plus-g"> </i>
       </a>
@@ -140,10 +90,10 @@
       <a class="btn-floating btn-li mx-1">
         <i class="fab fa-linkedin-in"> </i>
       </a>
-    </li>
+    </li> -->
     <li class="list-inline-item">
-      <a class="btn-floating btn-dribbble mx-1">
-        <i class="fab fa-dribbble"> </i>
+      <a href="https://www.youtube.com/channel/UC-8UcK4vvZGCCY-XeUHLcvg" class="btn-floating btn-dribbble mx-1">
+        <i class="fab fa-youtube"> </i>
       </a>
     </li>
   </ul>

@@ -104,7 +104,7 @@
     <!-- Quotation Section -->
     <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
       <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">
-        <div class="text-center white-text">
+        <div class="text-center white-text bangla-font">
           <h2 class="h2-responsive mb-5">
             <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যাক্তি আল্লাহকে ও আখিরাতে ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।
             <i class="fas fa-quote-right" aria-hidden="true"></i>
@@ -332,7 +332,6 @@
     </div>
     </section>
 
-      
 
 
     <!-- Some stat section -->

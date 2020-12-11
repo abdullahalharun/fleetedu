@@ -95,7 +95,7 @@ add_action( 'init', 'fleetedu_theme_custom_post' );
 /**
  * Register our sidebars and widgetized areas.
  */
-function mdb_widgets_init() {
+function fleetedu_widgets_init() {
 
     register_sidebar( array(
       'name'          => 'Sidebar',
@@ -105,8 +105,53 @@ function mdb_widgets_init() {
       'before_title'  => '',
       'after_title'   => '',
     ) );
+    
+    register_sidebar(
+      array(
+        'name'          => esc_html__( 'Footer One', 'fleetedu-theme' ),
+        'id'            => 'footer-1',
+        'description'   => esc_html__( 'Add footer one widgets here.', 'fleetedu-theme' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4 class="widget-title font-weight-bold text-uppercase mt-3 mb-4">',
+        'after_title'   => '</h4>',
+      )
+    ); 
+    register_sidebar(
+      array(
+        'name'          => esc_html__( 'Footer Two', 'fleetedu-theme' ),
+        'id'            => 'footer-2',
+        'description'   => esc_html__( 'Add footer two widgets here.', 'fleetedu-theme' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h5 class="widget-title font-weight-bold text-uppercase mt-3 mb-4">',
+        'after_title'   => '</h5>',
+      )
+    ); 
+    register_sidebar(
+      array(
+        'name'          => esc_html__( 'Footer Three', 'fleetedu-theme' ),
+        'id'            => 'footer-3',
+        'description'   => esc_html__( 'Add footer three widgets here.', 'fleetedu-theme' ),
+        'before_widget' => '<section id="%1$s" class="widget f-3 %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h5 class="widget-title font-weight-bold text-uppercase mt-3 mb-4">',
+        'after_title'   => '</h5>',
+      )
+    ); 
+    register_sidebar(
+      array(
+        'name'          => esc_html__( 'Footer Four', 'fleetedu-theme' ),
+        'id'            => 'footer-4',
+        'description'   => esc_html__( 'Add footer four widgets here.', 'fleetedu-theme' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h5 class="widget-title font-weight-bold text-uppercase mt-3 mb-4">',
+        'after_title'   => '</h5>',
+      )
+    ); 
   
   }
-  add_action( 'widgets_init', 'mdb_widgets_init' );
+  add_action( 'widgets_init', 'fleetedu_widgets_init' );
 
 ?>

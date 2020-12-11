@@ -7,6 +7,14 @@ Author: Abdullah Al Harun
 Author URI: https://github.com/abdullahalharun/
 */
 
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
+.bangla-font{
+	font-family: 'Hind Siliguri', sans-serif;
+}
+.n2-ow{
+	font-family: 'Hind Siliguri', sans-serif;
+}
 
 /* Nav style */
 .menu-item a{
@@ -39,9 +47,6 @@ li:hover ul.sub-menu{
 	z-index: 99;
 	margin-top: 0;
 }
-
-
-
 
 .agency .mask.rgba-gradient {
     background: -webkit-linear-gradient(45deg,rgba(29,236,197,.7),rgba(91,14,214,.7) 100%);
@@ -76,3 +81,18 @@ li:hover ul.sub-menu{
   
   .card-avatar img {
 	width: 100px; }
+
+#menu-footer-one{
+	list-style: none;
+    padding-left: 0;
+}
+
+#menu-footer-one-1{
+	list-style: none;
+    padding-left: 0;
+}
+
+.f-3 ul{
+	list-style: none;
+	padding-left: 0;
+}
