@@ -12,7 +12,7 @@ Author URI: https://github.com/abdullahalharun/
 .menu-item a{
 	padding-right: .5rem;
     padding-left: .5rem;
-    
+    margin-bottom: -9px;
     padding: .5rem 1rem;
     color: #000;
 }
