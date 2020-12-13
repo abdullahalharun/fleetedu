@@ -1,7 +1,5 @@
 <?php  get_header(); ?>
-<div>
-<?php require_once('components/navbar.inc.php'); ?>
-</div>
+
     <!--Main Navigation-->
     <header style="margin-top: 4rem">
         <?php
