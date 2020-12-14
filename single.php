@@ -125,7 +125,7 @@ if ( have_posts() ) {
                         <div class="card-body">
 
                             <div class="media">
-                                <img class="d-flex mr-3 z-depth-1" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(20).jpg" alt="Generic placeholder image">
+                                <img class="d-flex mr-3 z-depth-1" src="http://1.gravatar.com/avatar/adca007fd639cdcd48c42985af6494fe?s=100&d=mm&r=g" alt="Generic placeholder image">
                                 <div class="media-body">
                                     <h5 class="mt-0 font-weight-bold">Miley Steward</h5>
                                     Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
@@ -148,7 +148,7 @@ if ( have_posts() ) {
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-md-4 mb-4">
+                <div class="card col-md-4 mb-4">
 
                     <!-- Sticky content -->
                     <div class="sticky">
