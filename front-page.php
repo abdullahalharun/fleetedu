@@ -16,12 +16,15 @@ get_header(); ?>
       <!-- Our features -->
       <section  id="features" class="mb-5 container">
 
+      <?php 
+        $feature_title = cs_get_option('feature_title');
+        $feature_description = cs_get_option('feature_description');
+      ?>
         <!--Section heading-->
-        <h1 class="mb-3 my-5 pt-5 dark-grey-text wow fadeIn text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Our Features</h1>
+        <h1 class="mb-3 my-5 pt-5 dark-grey-text wow fadeIn text-center" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;"><?php echo $feature_title ?></h1>
 
         <!--Section description-->
-        <!-- <p class="text-center grey-text w-responsive mx-auto mb-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
-          Features description.</p> -->
+        <p class="text-center grey-text w-responsive mx-auto mb-5 wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;"><?php echo $feature_description ?></p>
 
         <!--First row-->
         <div class="row features wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
@@ -30,9 +33,8 @@ get_header(); ?>
           global $post;
           $args = array( 'posts_per_page' => 5, 'post_type'=> 'feature', 'orderby' => 'menu_order', 'order' => 'ASC' );
           $myposts = get_posts( $args );
-          foreach( $myposts as $post ) : setup_postdata($post); ?>
-          
-          <?php 
+          foreach( $myposts as $post ) : setup_postdata($post); 
+
             $feature_icon = get_post_meta($post->ID, 'feature_icon', true); 
           ?>
                         
@@ -51,51 +53,7 @@ get_header(); ?>
 
           <?php endforeach; wp_reset_query(); ?>
 
-          <!-- <div class="col-lg-4 text-center">
-            <div class="icon-area">
-              <div class="circle-icon">
-                <i class="fas fa-cogs blue-text fa-2x"></i>
-              </div>
-              <br>
-              <h5 class="dark-grey-text font-weight-bold mt-2">Expert Teacher</h5>
-              <div class="mt-1">
-                <p class="mx-3 grey-text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
-                  ipsum dolor sit
-                  amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 text-center">
-            <div class="icon-area">
-              <div class="circle-icon">
-                <i class="fas fa-book blue-text fa-2x"></i>
-              </div>
-              <br>
-              <h5 class="dark-grey-text font-weight-bold mt-2">Good Content</h5>
-              <div class="mt-1">
-                <p class="mx-3 grey-text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
-                  ipsum dolor sit
-                  amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 text-center mb-4">
-            <div class="icon-area">
-              <div class="circle-icon">
-                <i class="fas fa-users blue-text fa-2x"></i>
-              </div>
-              <br>
-              <h5 class="dark-grey-text font-weight-bold mt-2">Excellent support</h5>
-              <div class="mt-1">
-                <p class="mx-3 grey-text">Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem
-                  ipsum dolor sit
-                  amet, consectetur adipisicing elit.</p>
-              </div>
-            </div>
-          </div> -->
-
+          
         </div>
         <!--/First row-->
 
@@ -127,6 +85,14 @@ get_header(); ?>
           <!--Grid row-->
           <div class="row mb-5 pb-3">
 
+          <?php
+          global $post;
+          $args = array( 'posts_per_page' => 8, 'post_type'=> 'courses', 'orderby' => 'menu_order', 'order' => 'ASC' );
+          $myposts = get_posts( $args );
+          foreach( $myposts as $post ) : setup_postdata($post); 
+          
+          ?>
+
             <!--Grid column-->
             <div class="col-lg-3 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
 
@@ -134,8 +100,9 @@ get_header(); ?>
               <div class="card">
                 <!--Card image-->
                 <div class="view overlay">
+                  <?php the_post_thumbnail( 'medium-large', array('class' => 'card-img-top', 'width'=>'', 'height'=>'') ); ?>
                   <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt="">
-                  <a>
+                  <a href="<?php echo get_permalink() ?>">
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
                   </a>
                 </div>
@@ -145,15 +112,12 @@ get_header(); ?>
 
                   <!--Title-->
                   <h4 class="card-title darkgrey-text">
-                    <strong>Management Lessons from the Life of Rasulullah</strong>
+                    <strong><?php the_title(); ?></strong>
                   </h4>
                   <hr>
                   <!--Text-->
-                  <p class="font-small">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.
-                  </p>
-                  <a href="#" class="black-text d-flex flex-row-reverse">
+                  <p class="font-small"><?php the_content(); ?> </p>
+                  <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
                     <p class="waves-effect p-2 font-small blue-text mb-0">Read more
                       <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
                     </p>
@@ -166,122 +130,7 @@ get_header(); ?>
             </div>
             <!--Grid column-->
 
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-              <!--Card Light-->
-              <div class="card">
-                <!--Card image-->
-                <div class="view overlay">
-                  <img src="https://mdbootstrap.com/img/Photos/Others/images/40.jpg" class="card-img-top" alt="">
-                  <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                  </a>
-                </div>
-                <!--/.Card image-->
-                <!--Card content-->
-                <div class="card-body">
-
-                  <!--Title-->
-                  <h4 class="card-title darkgrey-text">
-                    <strong>Management Lessons from the Life of the Sahaba</strong>
-                  </h4>
-                  <hr>
-                  <!--Text-->
-                  <p class="font-small">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.
-                  </p>
-                  <a href="#" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">Read more
-                      <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
-                    </p>
-                  </a>
-                </div>
-                <!--/.Card content-->
-              </div>
-              <!--/.Card Light-->
-
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-              <!--Card Light-->
-              <div class="card">
-                <!--Card image-->
-                <div class="view overlay">
-                  <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt="">
-                  <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                  </a>
-                </div>
-                <!--/.Card image-->
-
-                <!--Card content-->
-                <div class="card-body">
-
-                  <!--Title-->
-                  <h4 class="card-title darkgrey-text">
-                    <strong>Employee Ethics & Employability Skills</strong>
-                  </h4>
-                  <hr>
-                  <!--Text-->
-                  <p class="font-small">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.
-                  </p>
-                  <a href="#" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">Read more
-                      <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
-                    </p>
-                  </a>
-                </div>
-                <!--/.Card content-->
-              </div>
-              <!--/.Card Light-->
-
-            </div>
-            <!--Grid column-->
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-              <!--Card Light-->
-              <div class="card">
-                <!--Card image-->
-                <div class="view overlay">
-                  <img src="http://itqaan.org/wp-content/uploads/2018/08/pexels-photo-574071.jpeg" class="card-img-top" alt="">
-                  <a>
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                  </a>
-                </div>
-                <!--/.Card image-->
-                <!--Card content-->
-                <div class="card-body">
-
-                  <!--Title-->
-                  <h4 class="card-title darkgrey-text">
-                    <strong>Leadership Lesson: A Prophetic Guideline</strong>
-                  </h4>
-                  <hr>
-                  <!--Text-->
-                  <p class="font-small">Some quick example text to build on the card title and make up the bulk of the
-                    card's
-                    content.
-                  </p>
-                  <a href="#" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">Read more
-                      <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
-                    </p>
-                  </a>
-                </div>
-                <!--/.Card content-->
-              </div>
-              <!--/.Card Light-->
-
-            </div>
-            <!--Grid column-->
+          <?php endforeach; wp_reset_query( ); ?>
 
           </div>
           <!--First row-->

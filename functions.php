@@ -89,6 +89,17 @@ function fleetedu_theme_custom_post() {
             'public' => true
         )
     );
+    
+    register_post_type( 'courses',
+        array(
+            'labels' => array(
+                'name' => __( 'Courses' ),
+                'singular_name' => __( 'Course' )
+            ),
+            'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'public' => true
+        )
+    );
 }
 add_action( 'init', 'fleetedu_theme_custom_post' );
 
@@ -153,5 +164,8 @@ function fleetedu_widgets_init() {
   
   }
   add_action( 'widgets_init', 'fleetedu_widgets_init' );
+
+// Add cs framework
+require_once get_theme_file_path() .'/inc/cs-framework/cs-framework.php';
 
 ?>
