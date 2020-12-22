@@ -111,5 +111,9 @@
 <script>
     $("#mdb-navigation > ul > li").addClass("page-item")
     $("#mdb-navigation > ul > li > a").addClass("page-link")
+
+    $('.carousel').carousel({
+      interval: 3000
+    })
 </script>
 </html>

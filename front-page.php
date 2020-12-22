@@ -59,8 +59,8 @@ get_header(); ?>
 
       </section>
 
-    <!-- Quotation Section -->
-    <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
+    <!-- Quotation Section  Static-->
+    <!-- <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
       <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">
         <div class="text-center white-text bangla-font">
           <h2 class="h2-responsive mb-5">
@@ -71,7 +71,53 @@ get_header(); ?>
           <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
         </div>
       </div>
+    </div> -->
+
+    <!-- Quotation Section Carousel-->
+    <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
+      <div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
+            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1"></li>
+            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li>
+          </ol>
+          <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">          
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="text-center white-text bangla-font">
+                  <h2 class="h2-responsive mb-5">
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যাক্তি আল্লাহকে ও আখিরাতে ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।
+                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                  </h2>
+
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="text-center white-text bangla-font">
+                  <h2 class="h2-responsive mb-5">
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যাক্তি আল্লাহকে ও আখিরাতে ঈমান রাখে,
+                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                  </h2>
+
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="text-center white-text bangla-font">
+                  <h2 class="h2-responsive mb-5">
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।
+                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                  </h2>
+
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
     </div>
+
 
       <!-- Our courses Section -->
     <div style="background-color: #f7f7f7;" class="container-fluid background-r">
@@ -100,8 +146,8 @@ get_header(); ?>
               <div class="card">
                 <!--Card image-->
                 <div class="view overlay">
-                  <?php the_post_thumbnail( 'medium-large', array('class' => 'card-img-top', 'width'=>'', 'height'=>'') ); ?>
-                  <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt="">
+                  <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '255,170') ); ?>
+                  <!-- <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt=""> -->
                   <a href="<?php echo get_permalink() ?>">
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
                   </a>
