@@ -113,7 +113,7 @@
     $("#mdb-navigation > ul > li > a").addClass("page-link")
 
     $('.carousel').carousel({
-      interval: 3000
+      interval: 4000
     })
 </script>
 </html>

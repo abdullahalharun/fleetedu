@@ -96,21 +96,21 @@ get_header(); ?>
               <div class="carousel-item">
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যাক্তি আল্লাহকে ও আখিরাতে ঈমান রাখে,
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> "দুনিয়ার প্রতি অনুরাগী হবে না, তাহলে আল্লাহ্ তোমাকে ভালবাসবেন; আর মানুষের কাছে যা আছে তার ব্যাপারে আগ্রহী হবে না, তাহলে মানুষও তোমাকে ভালবাসবে।"
                     <i class="fas fa-quote-right" aria-hidden="true"></i>
                   </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম [ইবনু মাজাহ] </h5>
                 </div>
               </div>
               <div class="carousel-item">
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যক্তি নিজ প্রভুকে ভয় করে এবং আত্মীয় সম্পর্ক বজায় রাখে, তার মৃত্যু পিছিয়ে দেয়া হয়, তার সম্পদ বৃদ্ধি করা হয় এবং তার পরিবার-পরিজন তাকে ভালোবাসে।
                     <i class="fas fa-quote-right" aria-hidden="true"></i>
                   </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ আব্দুল্লাহ ইবনু উমার রাঃ </h5>
                 </div>
               </div>
             </div>
@@ -126,7 +126,7 @@ get_header(); ?>
         <!--Section: Blog v.2-->
         <section class="extra-margins text-center">
 
-          <h2 class="text-center mb-5 my-5 pt-4 pb-4 font-weight-bold">Our courses</h2>
+          <h2 class="text-center mb-5 my-5 pt-4 pb-4 font-weight-bold">Itqaan Extensive</h2>
 
           <!--Grid row-->
           <div class="row mb-5 pb-3">

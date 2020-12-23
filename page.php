@@ -1,21 +1,25 @@
 <?php get_header(); ?>
 
-    <main id="primary" class="site-main">
+	<?php while ( have_posts() ) : the_post();  ?>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<header>
+	<div class="card card-intro blue-gradient mb-3">
+		<div class="card-body white-text rgba-black-light text-center pt-5 pb-4">
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-6">
+					<h1 class="font-weight-bold mb-4"><?php the_title() ?></h1>
+					<p class="lead mb-4">Checkout our latest posts...</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 
-			get_template_part( 'template-parts/content', 'page' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+<div class="container">
+	<?php the_content(  ); ?>
+</div>
 
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
+	<?php endwhile;  ?>
 
 <?php get_footer(); ?>
