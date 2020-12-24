@@ -133,7 +133,7 @@ get_header(); ?>
 
           <?php
           global $post;
-          $args = array( 'posts_per_page' => 8, 'post_type'=> 'courses', 'orderby' => 'menu_order', 'order' => 'ASC' );
+          $args = array( 'posts_per_page' => 8, 'post_type'=> 'course', 'orderby' => 'menu_order', 'order' => 'ASC' );
           $myposts = get_posts( $args );
           foreach( $myposts as $post ) : setup_postdata($post); 
           

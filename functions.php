@@ -90,14 +90,15 @@ function fleetedu_theme_custom_post() {
         )
     );
     
-    register_post_type( 'courses',
+    register_post_type( 'course',
         array(
             'labels' => array(
                 'name' => __( 'Courses' ),
                 'singular_name' => __( 'Course' )
             ),
             'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
-            'public' => true
+            'public' => true,
+            'has_archive' => false,
         )
     );
 }
