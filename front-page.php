@@ -227,7 +227,15 @@ get_header(); ?>
     </div>
     </section>
 
+    <!-- Itqaan Tube -->
+    <section class="container"> 
+      <!--Secion heading-->
+      <h2 class="text-center my-5 font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Itqaan Tube</h2>
 
+      <?php echo do_shortcode('[embedyt] https://www.youtube.com/embed?listType=playlist&list=UU-8UcK4vvZGCCY-XeUHLcvg&layout=gallery[/embedyt]'); ?>
+
+    </section>
+    
 
     <!-- Some stat section -->
     <div class="streak streak-photo streak-long-2" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full page/img%20%287%29.jpg')">
