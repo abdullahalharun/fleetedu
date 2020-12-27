@@ -96,3 +96,17 @@ li:hover ul.sub-menu{
 	list-style: none;
 	padding-left: 0;
 }
+
+
+/* Course section */
+
+.course-thumbnail{
+	max-height: 170px!important;
+}
+
+/* course details page */
+.short-info{
+	left: 57rem;
+    right: 1rem;
+    top: -11rem;
+}
