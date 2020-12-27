@@ -100,7 +100,7 @@ get_header(); ?>
               <div class="card">
                 <!--Card image-->
                 <div class="view overlay">
-                  <?php the_post_thumbnail( 'medium-large', array('class' => 'card-img-top', 'width'=>'', 'height'=>'') ); ?>
+                  <?php // the_post_thumbnail( 'medium-large', array('class' => 'card-img-top', 'width'=>'', 'height'=>'') ); ?>
                   <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt="">
                   <a href="<?php echo get_permalink() ?>">
                     <div class="mask rgba-white-slight waves-effect waves-light"></div>
