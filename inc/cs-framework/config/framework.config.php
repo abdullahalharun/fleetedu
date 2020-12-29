@@ -53,8 +53,8 @@ $options[]      = array(
 
 $options[]      = array(
   'name'        => 'ItqaanStat',
-  'title'       => 'stat',
-  'icon'        => 'fa fa-chart',
+  'title'       => 'Stat',
+  'icon'        => 'fas fa-chart-line',
 
   // begin: fields
   'fields'      => array(
@@ -93,6 +93,66 @@ $options[]      = array(
       'type'    => 'text',
       'title'   => 'Event Number',
       'default' => '70',
+    ),
+
+    
+  ), // end: fields
+);
+
+$options[]      = array(
+  'name'        => 'ItqaanQuotes',
+  'title'       => 'Quotes',
+  'icon'        => 'fas fa-chart-line',
+
+  // begin: fields
+  'fields'      => array(
+
+    // begin: a field
+    array(
+      'id'      => 'quote1',
+      'type'    => 'textarea',
+      'title'   => 'Quote One',
+      'default' => 'যে ব্যাক্তি আল্লাহ ও আখিরাতের উপর ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।',
+    ),
+    // end: a field
+
+    array(
+      'id'      => 'quote1person',
+      'type'    => 'text',
+      'title'   => 'Quote One Person',
+      'default' => '~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম)',
+    ),
+    
+    // begin: a field
+    array(
+      'id'      => 'quote2',
+      'type'    => 'textarea',
+      'title'   => 'Quote Two',
+      'default' => 'যে ব্যাক্তি আল্লাহ ও আখিরাতের উপর ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।',
+    ),
+    // end: a field
+
+    array(
+      'id'      => 'quote2person',
+      'type'    => 'text',
+      'title'   => 'Quote Two Person',
+      'default' => '~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম)',
+    ),
+    
+    // begin: a field
+    array(
+      'id'      => 'quote3',
+      'type'    => 'textarea',
+      'title'   => 'Quote Three',
+      'default' => 'যে ব্যাক্তি আল্লাহ ও আখিরাতের উপর ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।',
+    ),
+    // end: a field
+
+    array(
+      'id'      => 'quote3person',
+      'type'    => 'text',
+      'title'   => 'Quote Three Person',
+      'default' => '~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম)',
     ),
 
     
