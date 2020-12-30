@@ -95,10 +95,9 @@ if ( have_posts() ) {
                     </div>
                     <!--/.Card-->
 
-                    <!--Card-->
-                    <div class="card card-avatar mb-4 wow fadeIn">
+                    <!--Card Author-->
+                    <!-- <div class="card card-avatar mb-4 wow fadeIn">
 
-                        <!-- Card header -->
                         <div class="card-header font-weight-bold">
                             <span>Abut the author</span>
                             <span class="pull-right">
@@ -121,9 +120,7 @@ if ( have_posts() ) {
                             </span>
                         </div>
 
-                        <!--Card content-->
                         <div class="card-body">
-
                             <div class="media">
                                 <img class="d-flex mr-3 z-depth-1" src="http://1.gravatar.com/avatar/adca007fd639cdcd48c42985af6494fe?s=100&d=mm&r=g" alt="Generic placeholder image">
                                 <div class="media-body">
@@ -133,11 +130,10 @@ if ( have_posts() ) {
                                     Donec lacinia congue felis in faucibus.
                                 </div>
                             </div>
-
                         </div>
 
-                    </div>
-                    <!--/.Card-->
+                    </div> -->
+                    <!--/.Card Author-->
 
 
                     <!--Comments and reply-->
