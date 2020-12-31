@@ -384,53 +384,37 @@ get_header(); ?>
 
       </section>
 
-      
+      <!--Section: Articles-->
+      <section class="mt-4 mb-4" style="margin-top: 6px">
+        <div class="text-center container">
+          <!--Section heading-->
+          <h1 class="h2 font-weight-bold my-4">Itqaan Blog</h1>
 
-    <!--Main layout-->
-    <main>
-        <div class="container">
+          <!-- Section description -->
+          <p class="text-center w-responsive mx-auto my-5 grey-text">Check our recent blog posts...</p>
+          
+          <!--Grid row-->
+          <div class="row wow fadeIn">
 
-            <!--Section: Dynamic Content Wrapper-->
-            <section>
-              <div id="dynamic-content"></div>
+            <?php 
+            // Define our WP Query Parameters
+            $the_query = new WP_Query( 'posts_per_page=3' ); ?>
+              
+            
+            <?php 
+            // Start our WP Query
+            while ($the_query -> have_posts()) : $the_query -> the_post(); 
+            // Display the Post Title with Hyperlink
+            ?>
 
-            </section>
-            <!--Section: Dynamic Content Wrapper-->
-
-            <!--Section: Articles-->
-            <section class="text-center">
-
-                <!--Section heading-->
-                <h1 class="h2 font-weight-bold my-4">Recent articles</h1>
-
-                <?php 
-
-                // if ( have_posts() ) : 
-                //     while ( have_posts() ) : the_post();
-                //         the_content();
-                //         echo 'Hello';
-                //     endwhile;
-                // else :
-                //     _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
-                // endif;
-
-                ?>
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-                <?php
-                if ( have_posts() ) {
-                $counter = 1;
-                while ( have_posts() ) {
-                the_post();
-                ?>
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
+                
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-12 mb-4">
+                    
                         <!--Featured image-->
                         <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
                             <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                            <a href="<?php echo get_permalink() ?>">
+                            <a href="<?php echo get_permalink(); ?>">
                                 <div class="mask"></div>
                             </a>
                         </div>
@@ -438,7 +422,7 @@ get_header(); ?>
                         <!--Excerpt-->
                         <a href="" class="pink-text">
                             <h6 class="mb-3 mt-4">
-                                <i class="fa fa-bolt"></i>
+                                <!-- <i class="fa fa-bolt"></i> -->
                                 <strong> <?php the_category(', '); ?></strong>
                             </h6>
                         </a>
@@ -446,36 +430,25 @@ get_header(); ?>
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
-                            <a href="<?php echo get_permalink() ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <p class="grey-text"><?php the_excerpt(); ?></p>
-                        <a href="<?php echo get_permalink() ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
-                    </div>
-                    <!--Grid column-->
-
-                <?php
-                if ($counter % 3 == 0) {
-                ?>
-                </div>
-                <!--Grid row-->
-                <!--Grid dynamic row-->
-                <div class="row wow fadeIn">
-                <?php
-                }
-                $counter++;
-                } // end while
-                } // end if
-                ?>
-                </div>
-                <!--Grid row-->
-
-                <?php fleet_pagination(); ?>
-
-            </section>
-            <!--Section: Articles-->
-
+                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
+                        <div class="grey-text text-justify"><?php the_excerpt(); ?></div>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                    
+                  </div>
+                  <!--Grid column-->
+ 
+                  <?php 
+                  // Repeat the process and reset once it hits the limit
+                  endwhile;
+                  wp_reset_postdata();
+                  ?>
+                
+            </div>
+          
         </div>
-    </main>
-    <!--Main layout-->
+      </section>
+      <!--Section: Articles-->
 
+            
     
 <?php  get_footer(); ?>

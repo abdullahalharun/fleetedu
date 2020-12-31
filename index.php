@@ -74,7 +74,7 @@
                         <!--Featured image-->
                         <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
                             <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                            <a href="<?php echo get_permalink() ?>">
+                            <a href="<?php echo get_permalink(); ?>">
                                 <div class="mask"></div>
                             </a>
                         </div>
@@ -90,9 +90,9 @@
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
-                            <a href="<?php echo get_permalink() ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
+                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
                         <p class="grey-text"><?php the_excerpt(); ?></p>
-                        <a href="<?php echo get_permalink() ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
                     <!--Grid column-->
 
