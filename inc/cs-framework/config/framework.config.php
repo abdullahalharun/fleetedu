@@ -33,6 +33,14 @@ $options[]      = array(
 
     // begin: a field
     array(
+      'id'      => 'smart_slider_id',
+      'type'    => 'text',
+      'title'   => 'Slider ID',
+      'default'   => '2',
+    ),
+    // end: a field
+    // begin: a field
+    array(
       'id'      => 'feature_title',
       'type'    => 'text',
       'title'   => 'Feature Title',
@@ -155,8 +163,29 @@ $options[]      = array(
       'default' => '~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম)',
     ),
 
+    array(
+      'id'        => 'quotation-group',
+      'type'      => 'group',
+      'title'     => 'Group',
+      'button-text' => 'Add new quote',
+      'fields'    => array(
+        array(
+          'id'    => 'qoute',
+          'type'  => 'textarea',
+          'title' => 'Text',
+        ),
+        array(
+          'id'    => 'quote-p',
+          'type'  => 'text',
+          'title' => 'Color',
+        ),
+      ),
+    ),
+    
+
     
   ), // end: fields
+  
 );
 
 

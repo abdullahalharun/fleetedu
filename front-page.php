@@ -7,8 +7,9 @@ get_header(); ?>
     <!--Main Navigation-->
     <header class="card">
         <?php
-    echo do_shortcode('[smartslider3 slider="2"]');
-    ?>
+          $slider_id = cs_get_option('smart_slider_id');
+          echo do_shortcode('[smartslider3 slider="'.$slider_id.'"]');
+        ?>
         
     </header>
     <!--Main Navigation-->

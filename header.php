@@ -31,18 +31,18 @@
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <?php
+                    <?php
                     wp_nav_menu(
                         array(
                             'theme_location' => 'menu-1',
-                            'menu_class'     => 'navbar-nav mr-auto',
+                            'menu_class'     => 'navbar-nav mr-auto waves-effect',
                         )
                     );
                     ?>
 
-                </div>
+                
                     <!-- Right -->
-                    <ul class="navbar-nav nav-flex-icons">
+                    <ul class="navbar-nav ml-auto nav-flex-icons">
                         <li class="nav-item">
                             <a href="https://www.facebook.com/itqaan" class="nav-link waves-effect" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
@@ -60,7 +60,7 @@
                             </a>
                         </li> -->
                     </ul>
-
+                </div>
                 
 
             </div>

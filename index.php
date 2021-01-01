@@ -91,7 +91,7 @@
                         </h4>
                         <p>by
                             <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <p class="grey-text"><?php the_excerpt(); ?></p>
+                        <div class="text-justify"><?php the_excerpt(); ?></div>
                         <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
                     <!--Grid column-->

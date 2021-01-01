@@ -11,10 +11,10 @@ Author URI: https://github.com/abdullahalharun/
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
 .bangla-font{
 	font-family: 'Hind Siliguri', sans-serif;
+	font-size: 20px!important;
+
 }
-.n2-ow{
-	font-family: 'Hind Siliguri', sans-serif;
-}
+
 
 /* Nav style */
 .menu-item a{
@@ -106,7 +106,7 @@ li:hover ul.sub-menu{
 
 /* course details page */
 .short-info{
-	left: 57rem;
+	/* left: 57rem;
     right: 1rem;
-    top: -11rem;
+    top: -11rem; */
 }

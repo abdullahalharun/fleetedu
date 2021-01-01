@@ -20,7 +20,7 @@ Template Name: About Page Template
 </header>
 
 
-<div class="container text-justify mt-5 mb-5">
+<div class="container text-justify mt-5 mb-5 bangla-font">
 	<?php the_content(  ); ?>
 </div>
 
