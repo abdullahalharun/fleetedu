@@ -101,6 +101,29 @@ function fleetedu_theme_custom_post() {
             'has_archive' => false,
         )
     );
+    register_post_type( 'intensive_course',
+        array(
+            'labels' => array(
+                'name' => __( 'Intensive Courses' ),
+                'singular_name' => __( 'Intensive Course' )
+            ),
+            'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'public' => true,
+            'has_archive' => false,
+        )
+    );
+    
+    register_post_type( 'event',
+        array(
+            'labels' => array(
+                'name' => __( 'Events' ),
+                'singular_name' => __( 'Event' )
+            ),
+            'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'public' => true,
+            'has_archive' => false,
+        )
+    );
 }
 add_action( 'init', 'fleetedu_theme_custom_post' );
 
