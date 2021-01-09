@@ -115,7 +115,14 @@ $options[]      = array(
   // begin: fields
   'fields'      => array(
 
-    // begin: a field
+    array(
+      'id'      => 'enable_quote_section',
+      'type'    => 'switcher',
+      'title'   => 'Enable Quotation Section',
+      'help'    => 'Enable Quote Section',
+      'default' => true,
+    ),
+
     array(
       'id'      => 'quote1',
       'type'    => 'textarea',
@@ -166,24 +173,25 @@ $options[]      = array(
     array(
       'id'        => 'quotation-group',
       'type'      => 'group',
-      'title'     => 'Group',
-      'button-text' => 'Add new quote',
+      'title'     => 'Quotes',
+      'button_title' => 'Add new quote',
+      'accordion_title' => 'Add new quote',
       'fields'    => array(
         array(
           'id'    => 'qoute',
           'type'  => 'textarea',
-          'title' => 'Text',
+          'title' => 'Quote Text',
         ),
         array(
-          'id'    => 'quote-p',
+          'id'    => 'q_person',
           'type'  => 'text',
-          'title' => 'Color',
+          'title' => 'Name',
         ),
       ),
+      'dependency'  => array( 'enable_quote_section', '==', 'true'),
     ),
     
-
-    
+        
   ), // end: fields
   
 );

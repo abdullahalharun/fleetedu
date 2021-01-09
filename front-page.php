@@ -81,23 +81,27 @@ get_header(); ?>
       $quote1person = cs_get_option('quote1person');
       $quote2person = cs_get_option('quote2person');
       $quote3person = cs_get_option('quote3person');
+
+      $enable_quote_section = cs_get_option('enable_quote_section');
     ?>
 
     <!-- Quotation Section Carousel-->
+  <?php if($enable_quote_section == true) : ?>
     <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
       <div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
-            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1"></li>
-            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li>
-          </ol>
-          <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">          
+          <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong"> 
+            <ol class="carousel-indicators">
+              <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
+              <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1"></li>
+              <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li>
+            </ol>
+                   
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
                     <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $quote1; ?>
-                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
                   </h2>
 
                   <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote1person; ?> </h5>
@@ -107,7 +111,7 @@ get_header(); ?>
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
                     <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $quote2; ?>
-                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
                   </h2>
 
                   <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote2person; ?> </h5>
@@ -117,17 +121,17 @@ get_header(); ?>
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
                     <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $quote3; ?>
-                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                    <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
                   </h2>
 
                   <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote3person; ?> </h5>
                 </div>
               </div>
             </div>
-        </div>
+          </div>
       </div>
     </div>
-
+<?php endif; ?>
 
     <!-- Extensive courses -->
     <div style="background-color: #f7f7f7;" class="container-fluid background-r">
