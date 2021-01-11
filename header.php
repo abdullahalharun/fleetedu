@@ -18,7 +18,7 @@
             <div class="container">
 
                 <!-- Brand -->
-                <!-- <a class="navbar-brand pt-0 waves-effect" href="<?php site_url(); ?>">
+                <a class="navbar-brand pt-0 waves-effect" href="<?php echo get_home_url(); ?>">
                     <img height="48px" src="http://itqaan.org/wp-content/uploads/2020/12/ITQAN_logo.png" alt="Itqaan logo">
                 </a> -->
 
@@ -41,42 +41,18 @@
                 <!-- Links -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <?php
+                    <?php
                     wp_nav_menu(
                         array(
                             'theme_location' => 'menu-1',
-                            'menu_class'     => 'navbar-nav mr-auto',
+                            'menu_class'     => 'navbar-nav mr-auto waves-effect',
                         )
                     );
                     ?>
 
-
-                    <!-- Left -->
-                    <!-- <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link waves-effect" href="#">Home
-                                <span class="sr-only">(current)</span>
-                            </a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle waves-effect" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false">Categories </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="">Marketing Automation</a>
-                                <a class="dropdown-item" href="">Web Push Notifications</a>
-                                <a class="dropdown-item" href="">Analytics & Tag Manager</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Link</a>
-                        </li>
-                    </ul> -->
-                </div>
+                
                     <!-- Right -->
-                    <ul class="navbar-nav nav-flex-icons">
+                    <ul class="navbar-nav ml-auto nav-flex-icons">
                         <li class="nav-item">
                             <a href="https://www.facebook.com/itqaan" class="nav-link waves-effect" target="_blank">
                                 <i class="fab fa-facebook-f"></i>
@@ -94,7 +70,7 @@
                             </a>
                         </li> -->
                     </ul>
-
+                </div>
                 
 
             </div>

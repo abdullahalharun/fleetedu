@@ -33,6 +33,14 @@ $options[]      = array(
 
     // begin: a field
     array(
+      'id'      => 'smart_slider_id',
+      'type'    => 'text',
+      'title'   => 'Slider ID',
+      'default'   => '2',
+    ),
+    // end: a field
+    // begin: a field
+    array(
       'id'      => 'feature_title',
       'type'    => 'text',
       'title'   => 'Feature Title',
@@ -48,24 +56,21 @@ $options[]      = array(
     ),
 
     
-  ), // end: fields
+  ), 
 );
 
 $options[]      = array(
   'name'        => 'ItqaanStat',
-  'title'       => 'stat',
-  'icon'        => 'fa fa-chart',
+  'title'       => 'Stat',
+  'icon'        => 'fas fa-chart-line',
 
-  // begin: fields
   'fields'      => array(
 
-    // begin: a field
     array(
       'id'      => 'stat_title',
       'type'    => 'text',
       'title'   => 'Stat Title',
     ),
-    // end: a field
 
     array(
       'id'      => 'students_stat',
@@ -95,8 +100,62 @@ $options[]      = array(
       'default' => '70',
     ),
 
+  ), 
+);
+
+$options[]      = array(
+  'name'        => 'ItqaanQuotes',
+  'title'       => 'Quotes',
+  'icon'        => 'fa fa-star',
+
+  'fields'      => array(
+
+    array(
+      'id'      => 'enable_quote_section',
+      'type'    => 'switcher',
+      'title'   => 'Enable Quotation Section',
+      'help'    => 'Enable Quote Section',
+      'default' => true,
+    ),
+
+    array(
+      'id'      => 'quote1',
+      'type'    => 'textarea',
+      'title'   => 'Quote One',
+      'default' => 'যে ব্যাক্তি আল্লাহ ও আখিরাতের উপর ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।',
+    ),
+
+    array(
+      'id'      => 'quote1person',
+      'type'    => 'text',
+      'title'   => 'Quote One Person',
+      'default' => '~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম)',
+    ),
     
+    array(
+      'id'        => 'quotations',
+      'type'      => 'group',
+      'title'     => 'Quotes',
+      'button_title' => 'Add new quote',
+      'accordion_title' => 'Add new quote',
+      'fields'    => array(
+        array(
+          'id'    => 'qoute',
+          'type'  => 'textarea',
+          'title' => 'Quote Text',
+        ),
+        array(
+          'id'    => 'q_person',
+          'type'  => 'text',
+          'title' => 'Name',
+        ),
+      ),
+      'dependency'  => array( 'enable_quote_section', '==', 'true'),
+    ),
+    
+        
   ), // end: fields
+  
 );
 
 
