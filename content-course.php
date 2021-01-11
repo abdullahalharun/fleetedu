@@ -4,7 +4,7 @@
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-6">
 					<h1 class="font-weight-bold mb-4"><?php the_title() ?></h1>
-					<p class="lead mb-4">Checkout our latest posts...</p>
+					<p class="lead mb-4">Checkout our latest course...</p>
 				</div>
 			</div>
 		</div>
@@ -12,7 +12,7 @@
 </header>
 
 <!-- Course details -->
-<section class="course-details">
+<section class="course-details container">
        <div class="col-8">
 
        </div>

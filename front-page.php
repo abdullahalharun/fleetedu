@@ -162,9 +162,9 @@ get_header(); ?>
                   </h4>
                   <hr>
                   <!--Text-->
-                  <p class="font-small"><?php the_content(); ?> </p>
+                  <p class="font-small"><?php the_excerpt(); ?> </p>
                   <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">Read more
+                    <p class="waves-effect p-2 font-small blue-text mb-0">View details
                       <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
                     </p>
                   </a>
@@ -392,7 +392,7 @@ get_header(); ?>
             <section class="text-center">
 
                 <!--Section heading-->
-                <h1 class="h2 font-weight-bold my-4">Recent articles</h1>
+                <h1 class="h2 font-weight-bold my-4">Itqaan Blog</h1>
 
                 <?php 
 
@@ -437,9 +437,9 @@ get_header(); ?>
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
-                            <a href="<?php echo get_permalink() ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
+                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
                         <p class="grey-text"><?php the_excerpt(); ?></p>
-                        <a href="<?php echo get_permalink() ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
                     <!--Grid column-->
 

@@ -18,9 +18,19 @@
             <div class="container">
 
                 <!-- Brand -->
-                <a class="navbar-brand pt-0 waves-effect" href="">
+                <!-- <a class="navbar-brand pt-0 waves-effect" href="<?php site_url(); ?>">
                     <img height="48px" src="http://itqaan.org/wp-content/uploads/2020/12/ITQAN_logo.png" alt="Itqaan logo">
-                </a>
+                </a> -->
+
+                <?php
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    if ( has_custom_logo() ) {
+                            echo '<img src="' . esc_url( $logo) . '" alt="' . get_bloginfo( 'name' ) . '">';
+                    } else {
+                            echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
+                    }
+                ?>
 
                 <!-- Collapse -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

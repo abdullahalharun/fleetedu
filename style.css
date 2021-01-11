@@ -16,6 +16,11 @@ Author URI: https://github.com/abdullahalharun/
 	font-family: 'Hind Siliguri', sans-serif;
 }
 
+@font-face{
+    font-family: 'Hind Siliguri';
+    src: url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
+}
+
 /* Nav style */
 .menu-item a{
 	padding-right: .5rem;
