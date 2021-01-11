@@ -83,6 +83,8 @@ get_header(); ?>
       $quote3person = cs_get_option('quote3person');
 
       $enable_quote_section = cs_get_option('enable_quote_section');
+      $qoutes = cs_get_option('quotations');
+
     ?>
 
     <!-- Quotation Section Carousel-->
@@ -92,8 +94,11 @@ get_header(); ?>
           <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong"> 
             <ol class="carousel-indicators">
               <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
-              <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1"></li>
-              <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li>
+              
+              <?php if(!empty($qoutes)) : $id = 0; foreach($qoutes as $q) : $id++;?>
+                <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="<?php echo $id; ?>"></li>
+                <!-- <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li> -->
+              <?php endforeach; endif; ?>
             </ol>
                    
             <div class="carousel-inner">
@@ -107,26 +112,22 @@ get_header(); ?>
                   <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote1person; ?> </h5>
                 </div>
               </div>
+
+              <?php if(!empty($qoutes)) : foreach($qoutes as $q) : ?>
+
               <div class="carousel-item">
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $quote2; ?>
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $q['qoute']; ?>
                     <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
                   </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote2person; ?> </h5>
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $q['q_person']; ?> </h5>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="text-center white-text bangla-font">
-                  <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $quote3; ?>
-                    <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
-                  </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote3person; ?> </h5>
-                </div>
-              </div>
+              <?php endforeach; endif; ?>
+              
             </div>
           </div>
       </div>
