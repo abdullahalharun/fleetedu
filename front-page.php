@@ -75,14 +75,10 @@ get_header(); ?>
     </div> -->
 
     <?php 
-      $quote1 = cs_get_option('quote1');
-      $quote2 = cs_get_option('quote2');
-      $quote3 = cs_get_option('quote3');
-      $quote1person = cs_get_option('quote1person');
-      $quote2person = cs_get_option('quote2person');
-      $quote3person = cs_get_option('quote3person');
-
+      
       $enable_quote_section = cs_get_option('enable_quote_section');
+      $quote1 = cs_get_option('quote1');
+      $quote1person = cs_get_option('quote1person');
       $qoutes = cs_get_option('quotations');
 
     ?>
@@ -532,44 +528,11 @@ get_header(); ?>
           <!--Section heading-->
           <h2 class="text-center mt-3 pt-4 font-weight-bold">Itqaan Blog</h2>
 
-<<<<<<< HEAD
-            </section>
-            <!--Section: Dynamic Content Wrapper-->
-
-            <!--Section: Articles-->
-            <section class="text-center">
-
-                <!--Section heading-->
-                <h1 class="h2 font-weight-bold my-4">Itqaan Blog</h1>
-
-                <?php 
-
-                // if ( have_posts() ) : 
-                //     while ( have_posts() ) : the_post();
-                //         the_content();
-                //         echo 'Hello';
-                //     endwhile;
-                // else :
-                //     _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
-                // endif;
-
-                ?>
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-                <?php
-                if ( have_posts() ) {
-                $counter = 1;
-                while ( have_posts() ) {
-                the_post();
-                ?>
-=======
           <!-- Section description -->
           <p class="text-center w-responsive mx-auto my-3 mb-3 grey-text">Check our recent blog posts...</p>
           
           <!--Grid row-->
           <div class="row wow fadeIn">
->>>>>>> f88fc819a7f6806afc7ef76c212e745c1fb7f1b4
 
             <?php 
             // Define our WP Query Parameters
@@ -606,34 +569,6 @@ get_header(); ?>
                         </h4>
                         <p>by
                             <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-<<<<<<< HEAD
-                        <p class="grey-text"><?php the_excerpt(); ?></p>
-                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
-                    </div>
-                    <!--Grid column-->
-
-                <?php
-                if ($counter % 3 == 0) {
-                ?>
-                </div>
-                <!--Grid row-->
-                <!--Grid dynamic row-->
-                <div class="row wow fadeIn">
-                <?php
-                }
-                $counter++;
-                } // end while
-                } // end if
-                ?>
-                </div>
-                <!--Grid row-->
-
-                <?php fleet_pagination(); ?>
-
-            </section>
-            <!--Section: Articles-->
-
-=======
                         <div class="grey-text text-justify"><?php the_excerpt(); ?></div>
                         <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     
@@ -648,7 +583,6 @@ get_header(); ?>
                 
             </div>
           
->>>>>>> f88fc819a7f6806afc7ef76c212e745c1fb7f1b4
         </div>
       </section>
       <!--Section: Articles-->

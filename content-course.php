@@ -4,11 +4,7 @@
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-6">
 					<h1 class="font-weight-bold mb-4"><?php the_title() ?></h1>
-<<<<<<< HEAD
-					<p class="lead mb-4">Checkout our latest course...</p>
-=======
 					<!-- <p class="lead mb-4">Checkout our latest cours...</p> -->
->>>>>>> f88fc819a7f6806afc7ef76c212e745c1fb7f1b4
 				</div>
 			</div>
 		</div>
@@ -23,7 +19,7 @@
           <a href="http://localhost/wordpress/wordpress_lms_dev/media-skills-how-to-conduct-media/" class="font-weight-bold dark-grey-text">fleetadmin</a>, December 8, 2018
         </p>
         <h3>Course Description</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <?php the_content(  ); ?>
        
         <h3>Topics</h3>
         <div class="row">
@@ -152,11 +148,13 @@
       </div>
        <div class="col-lg-4 col-md-4 col-12">
             <div class="card pull-right short-info justify-content-end" style="width: 18rem">
-                <img
+                <!-- <img
                 src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
                 class="card-img-top"
                 alt="..."
-                />
+                /> -->
+                <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '288,170') ); ?>
+
                 <div class="card-body">
                 <h5 class="card-title">Course Short info</h5>
                 <p class="card-text">
@@ -176,7 +174,3 @@
        </div>
       </div>
    </section>
-
-<div class="container">
-	<?php the_content(  ); ?>
-</div>
