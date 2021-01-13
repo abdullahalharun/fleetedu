@@ -62,7 +62,7 @@ $options[]      = array(
 $options[]      = array(
   'name'        => 'ItqaanStat',
   'title'       => 'Stat',
-  'icon'        => 'fas fa-chart-line',
+  'icon'        => 'fa fa-star',
 
   'fields'      => array(
 

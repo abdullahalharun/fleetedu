@@ -18,7 +18,7 @@
         <p class="text-muted mt-2">by
           <a href="http://localhost/wordpress/wordpress_lms_dev/media-skills-how-to-conduct-media/" class="font-weight-bold dark-grey-text">fleetadmin</a>, December 8, 2018
         </p>
-        <h3>Course Description</h3>
+        <!-- <h3>Course Description</h3> -->
         <?php the_content(  ); ?>
        
         <h3>Topics</h3>
@@ -27,15 +27,20 @@
           
             <!--Accordion wrapper-->
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-        
+            <?php 
+                $modules = cs_get_option('modules');
+                
+              ?>
+
+              <?php if(!empty($modules)) : $id = 1; foreach($modules as $module) : $id++; ?>
               <!-- Accordion card -->
               <div class="card border-top border-bottom-0 border-left border-right border-light">
-        
+                     
                 <!-- Card header -->
                 <div class="card-header border-bottom border-light" role="tab" id="headingOne1">
                   <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
                     <h5 class="font-weight-normal mb-0">
-                      Module 1: Module 1 Title <i class="fas fa-angle-down rotate-icon float-right"></i>
+                      Module <?php echo $id; ?>: <?php echo $module['module_title']; ?> <i class="fas fa-angle-down rotate-icon float-right"></i>
                     </h5>
                   </a>
                 </div>
@@ -50,6 +55,8 @@
         
               </div>
               <!-- Accordion card -->
+
+              <?php endforeach; endif; ?>
         
               <!-- Accordion card -->
               <div class="card border-bottom-0 border-left border-right border-light">

@@ -197,5 +197,58 @@ $options[]    = array(
 
   ),
 );
+// -----------------------------------------
+// Post Metabox Options                    -
+// -----------------------------------------
+$options[]    = array(
+  'id'        => '_custom_post_options',
+  'title'     => 'Custom Post Options',
+  'post_type' => 'course',
+  'context'   => 'normal',
+  'priority'  => 'default',
+  'sections'  => array(
+
+    array(
+      'name'   => 'section_1',
+      'title'     => 'Home',
+      'fields' => array(
+
+        
+        array(
+          'id'    => 'short_info',
+          'type'  => 'textarea',
+          'title' => 'Course Short Into',
+          'label' => 'Write course short info.',
+        ),        
+
+      ),
+    ),
+    
+    array(
+      'name'   => 'section_2',
+      'title'     => 'Course Option',
+      'fields' => array(        
+        
+        array(
+          'id'        => 'modules',
+          'type'      => 'group',
+          'title'     => 'Modules',
+          'button_title' => 'Add new module',
+          'accordion_title' => 'Add new module',
+          'fields'    => array(
+            array(
+              'id'    => 'module_title',
+              'type'  => 'text',
+              'title' => 'Module Title',
+            ),
+
+          ),
+        ),
+
+      ),
+    ),
+
+  ),
+);
 
 CSFramework_Metabox::instance( $options );
