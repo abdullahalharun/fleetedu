@@ -7,8 +7,9 @@ get_header(); ?>
     <!--Main Navigation-->
     <header class="card">
         <?php
-    echo do_shortcode('[smartslider3 slider="2"]');
-    ?>
+          $slider_id = cs_get_option('smart_slider_id');
+          echo do_shortcode('[smartslider3 slider="'.$slider_id.'"]');
+        ?>
         
     </header>
     <!--Main Navigation-->
@@ -73,60 +74,70 @@ get_header(); ?>
       </div>
     </div> -->
 
+    <?php 
+      
+      $enable_quote_section = cs_get_option('enable_quote_section');
+      $quote1 = cs_get_option('quote1');
+      $quote1person = cs_get_option('quote1person');
+      $qoutes = cs_get_option('quotations');
+
+    ?>
+
     <!-- Quotation Section Carousel-->
+  <?php if($enable_quote_section == true) : ?>
     <div class="streak streak-photo streak-md" style="background-image: url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full%20page/img%20%287%29.jpg');">
       <div id="carouselExampleCaptions" class="carousel slide" data-mdb-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
-            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="1"></li>
-            <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li>
-          </ol>
-          <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong">          
+          <div style="padding: 6rem;" class="flex-center mask rgba-indigo-strong"> 
+            <ol class="carousel-indicators">
+              <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
+              
+              <?php if(!empty($qoutes)) : $id = 0; foreach($qoutes as $q) : $id++;?>
+                <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="<?php echo $id; ?>"></li>
+                <!-- <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li> -->
+              <?php endforeach; endif; ?>
+            </ol>
+                   
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যাক্তি আল্লাহকে ও আখিরাতে ঈমান রাখে, তার উচিত হয় উত্তম কথা বলা অথবা চুপ থাকা।
-                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $quote1; ?>
+                    <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
                   </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম) </h5>
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $quote1person; ?> </h5>
                 </div>
               </div>
+
+              <?php if(!empty($qoutes)) : foreach($qoutes as $q) : ?>
+
               <div class="carousel-item">
                 <div class="text-center white-text bangla-font">
                   <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> "দুনিয়ার প্রতি অনুরাগী হবে না, তাহলে আল্লাহ্ তোমাকে ভালবাসবেন; আর মানুষের কাছে যা আছে তার ব্যাপারে আগ্রহী হবে না, তাহলে মানুষও তোমাকে ভালবাসবে।"
-                    <i class="fas fa-quote-right" aria-hidden="true"></i>
+                    <i class="fas fa-quote-left" aria-hidden="true"></i> <?php echo $q['qoute']; ?>
+                    <!-- <i class="fas fa-quote-right" aria-hidden="true"></i> -->
                   </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম [ইবনু মাজাহ] </h5>
+                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ <?php echo $q['q_person']; ?> </h5>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="text-center white-text bangla-font">
-                  <h2 class="h2-responsive mb-5">
-                    <i class="fas fa-quote-left" aria-hidden="true"></i> যে ব্যক্তি নিজ প্রভুকে ভয় করে এবং আত্মীয় সম্পর্ক বজায় রাখে, তার মৃত্যু পিছিয়ে দেয়া হয়, তার সম্পদ বৃদ্ধি করা হয় এবং তার পরিবার-পরিজন তাকে ভালোবাসে।
-                    <i class="fas fa-quote-right" aria-hidden="true"></i>
-                  </h2>
 
-                  <h5 class="text-center font-italic " data-wow-delay="0.2s">~ আব্দুল্লাহ ইবনু উমার রাঃ </h5>
-                </div>
-              </div>
+              <?php endforeach; endif; ?>
+              
             </div>
-        </div>
+          </div>
       </div>
     </div>
+<?php endif; ?>
 
-
-      <!-- Our courses Section -->
+    <!-- Extensive courses -->
     <div style="background-color: #f7f7f7;" class="container-fluid background-r">
       <div class="container py-3">
 
         <!--Section: Blog v.2-->
         <section class="extra-margins text-center">
 
-          <h2 class="text-center mb-5 my-5 pt-4 pb-4 font-weight-bold">Itqaan Extensive</h2>
+          <h2 class="text-center mb-5 my-4 pt-4 pb-4 font-weight-bold">Itqaan Extensive</h2>
 
           <!--Grid row-->
           <div class="row mb-5 pb-3">
@@ -162,9 +173,77 @@ get_header(); ?>
                   </h4>
                   <hr>
                   <!--Text-->
-                  <p class="font-small"><?php the_content(); ?> </p>
+                  <p class="font-small"><?php the_excerpt(); ?> </p>
                   <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">Read more
+                    <p class="waves-effect p-2 font-small blue-text mb-0">View details
+                      <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
+                    </p>
+                  </a>
+                </div>
+                <!--/.Card content-->
+              </div>
+              <!--/.Card Light-->
+
+            </div>
+            <!--Grid column-->
+
+          <?php endforeach; wp_reset_query( ); ?>
+
+          </div>
+          <!--First row-->
+
+        </section>
+        <!--Section: Blog v.2-->
+
+      </div>
+    </div>
+
+    <!-- Intensive courses -->
+    <div style="background-color: #e6e6e6;" class="container-fluid background-r">
+      <div class="container py-3">
+
+        <!--Section: Blog v.2-->
+        <section class="extra-margins text-center">
+
+          <h2 class="text-center mb-5 my-4 pt-4 pb-4 font-weight-bold">Itqaan Intensive</h2>
+
+          <!--Grid row-->
+          <div class="row mb-5 pb-3">
+
+          <?php
+          global $post;
+          $args = array( 'posts_per_page' => 8, 'post_type'=> 'intensive_course', 'orderby' => 'menu_order', 'order' => 'ASC' );
+          $intensive_posts = get_posts( $args );
+          foreach( $intensive_posts as $post ) : setup_postdata($post); 
+          
+          ?>
+
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+
+              <!--Card Light-->
+              <div class="card">
+                <!--Card image-->
+                <div class="view overlay">
+                  <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '255,170') ); ?>
+                  <!-- <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt=""> -->
+                  <a href="<?php echo get_permalink() ?>">
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                  </a>
+                </div>
+                <!--/.Card image-->
+                <!--Card content-->
+                <div class="card-body">
+
+                  <!--Title-->
+                  <h4 class="card-title darkgrey-text">
+                    <strong><?php the_title(); ?></strong>
+                  </h4>
+                  <hr>
+                  <!--Text-->
+                  <p class="font-small"><?php the_excerpt(); ?> </p>
+                  <a href="#" class="black-text d-flex flex-row-reverse">
+                    <p class="waves-effect p-2 font-small blue-text mb-0">Coming soon
                       <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
                     </p>
                   </a>
@@ -227,10 +306,86 @@ get_header(); ?>
     </div>
     </section>
 
+    <!-- Itqaan Tube -->
+    <section class="container"> 
+      <!--Secion heading-->
+      <h2 class="text-center my-5 font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">Itqaan Tube</h2>
 
+      <?php echo do_shortcode('[embedyt] https://www.youtube.com/embed?listType=playlist&list=UU-8UcK4vvZGCCY-XeUHLcvg&layout=gallery[/embedyt]'); ?>
+
+    </section>
+    
+
+    <!-- Events -->
+    <div style="background-color: #e6e6e6;" class="container-fluid background-r">
+      <div class="container py-3">
+
+        <!--Section: Blog v.2-->
+        <section class="extra-margins text-center">
+
+          <h2 class="text-center mb-5 my-3 pt-4 pb-4 font-weight-bold">Itqaan Events</h2>
+
+          <!--Grid row-->
+          <div class="row mb-5 pb-3">
+
+          <?php
+          global $post;
+          $args = array( 'posts_per_page' => 8, 'post_type'=> 'event', 'orderby' => 'menu_order', 'order' => 'ASC' );
+          $events = get_posts( $args );
+          foreach( $events as $post ) : setup_postdata($post); 
+          
+          ?>
+
+            <!--Grid column-->
+            <div class="col-lg-6 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
+
+              <!--Card Light-->
+              <div class="card">
+                <!--Card image-->
+                <div class="view overlay">
+                  <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '540,170') ); ?>
+                  <!-- <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt=""> -->
+                  <a href="<?php echo get_permalink() ?>">
+                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                  </a>
+                </div>
+                <!--/.Card image-->
+                <!--Card content-->
+                <div class="card-body">
+
+                  <!--Title-->
+                  <h4 class="card-title darkgrey-text bangla-font">
+                    <strong><?php the_title(); ?></strong>
+                  </h4>
+                  <hr>
+                  <!--Text-->
+                  <div class="font-small"><?php the_excerpt(); ?> </div>
+                  <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
+                    <p class="waves-effect p-2 font-small blue-text mb-0">View Details
+                      <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
+                    </p>
+                  </a>
+                </div>
+                <!--/.Card content-->
+              </div>
+              <!--/.Card Light-->
+
+            </div>
+            <!--Grid column-->
+
+          <?php endforeach; wp_reset_query( ); ?>
+
+          </div>
+          <!--First row-->
+
+        </section>
+        <!--Section: Blog v.2-->
+
+      </div>
+    </div>
 
     <!-- Some stat section -->
-    <div class="streak streak-photo streak-long-2" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full page/img%20%287%29.jpg')">
+    <div class="d-none streak streak-photo streak-long-2" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full page/img%20%287%29.jpg')">
       <div style="padding: 6rem;" class="mask flex-center rgba-indigo-strong">
         <div class="container">
           <h3 class="text-center text-white mb-5 text-uppercase font-weight-bold wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.2s;">
@@ -367,53 +522,37 @@ get_header(); ?>
 
       </section>
 
-      
+      <!--Section: Articles-->
+      <section class="mt-4 mb-4" style="margin-top: 6px">
+        <div class="text-center container">
+          <!--Section heading-->
+          <h2 class="text-center mt-3 pt-4 font-weight-bold">Itqaan Blog</h2>
 
-    <!--Main layout-->
-    <main>
-        <div class="container">
+          <!-- Section description -->
+          <p class="text-center w-responsive mx-auto my-3 mb-3 grey-text">Check our recent blog posts...</p>
+          
+          <!--Grid row-->
+          <div class="row wow fadeIn">
 
-            <!--Section: Dynamic Content Wrapper-->
-            <section>
-              <div id="dynamic-content"></div>
+            <?php 
+            // Define our WP Query Parameters
+            $the_query = new WP_Query( 'posts_per_page=3' ); ?>
+              
+            
+            <?php 
+            // Start our WP Query
+            while ($the_query -> have_posts()) : $the_query -> the_post(); 
+            // Display the Post Title with Hyperlink
+            ?>
 
-            </section>
-            <!--Section: Dynamic Content Wrapper-->
-
-            <!--Section: Articles-->
-            <section class="text-center">
-
-                <!--Section heading-->
-                <h1 class="h2 font-weight-bold my-4">Recent articles</h1>
-
-                <?php 
-
-                // if ( have_posts() ) : 
-                //     while ( have_posts() ) : the_post();
-                //         the_content();
-                //         echo 'Hello';
-                //     endwhile;
-                // else :
-                //     _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
-                // endif;
-
-                ?>
-
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-                <?php
-                if ( have_posts() ) {
-                $counter = 1;
-                while ( have_posts() ) {
-                the_post();
-                ?>
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
+                
+                  <!--Grid column-->
+                  <div class="col-lg-4 col-md-12 mb-4">
+                    
                         <!--Featured image-->
                         <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
                             <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                            <a href="<?php echo get_permalink() ?>">
+                            <a href="<?php echo get_permalink(); ?>">
                                 <div class="mask"></div>
                             </a>
                         </div>
@@ -421,7 +560,7 @@ get_header(); ?>
                         <!--Excerpt-->
                         <a href="" class="pink-text">
                             <h6 class="mb-3 mt-4">
-                                <i class="fa fa-bolt"></i>
+                                <!-- <i class="fa fa-bolt"></i> -->
                                 <strong> <?php the_category(', '); ?></strong>
                             </h6>
                         </a>
@@ -429,36 +568,25 @@ get_header(); ?>
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
-                            <a href="<?php echo get_permalink() ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <p class="grey-text"><?php the_excerpt(); ?></p>
-                        <a href="<?php echo get_permalink() ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
-                    </div>
-                    <!--Grid column-->
-
-                <?php
-                if ($counter % 3 == 0) {
-                ?>
-                </div>
-                <!--Grid row-->
-                <!--Grid dynamic row-->
-                <div class="row wow fadeIn">
-                <?php
-                }
-                $counter++;
-                } // end while
-                } // end if
-                ?>
-                </div>
-                <!--Grid row-->
-
-                <?php fleet_pagination(); ?>
-
-            </section>
-            <!--Section: Articles-->
-
+                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
+                        <div class="grey-text text-justify"><?php the_excerpt(); ?></div>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                    
+                  </div>
+                  <!--Grid column-->
+ 
+                  <?php 
+                  // Repeat the process and reset once it hits the limit
+                  endwhile;
+                  wp_reset_postdata();
+                  ?>
+                
+            </div>
+          
         </div>
-    </main>
-    <!--Main layout-->
+      </section>
+      <!--Section: Articles-->
 
+            
     
 <?php  get_footer(); ?>

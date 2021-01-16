@@ -4,45 +4,180 @@
 			<div class="row d-flex justify-content-center">
 				<div class="col-md-6">
 					<h1 class="font-weight-bold mb-4"><?php the_title() ?></h1>
-					<p class="lead mb-4">Checkout our latest posts...</p>
+					<!-- <p class="lead mb-4">Checkout our latest cours...</p> -->
 				</div>
 			</div>
 		</div>
 	</div>
 </header>
 
-<!-- Course details -->
-<section class="course-details">
-       <div class="col-8">
+    <!-- Course details -->
+    <section class="course-details container">
+     <div class="row">
+       <div class="col-12 col-md-8 text-justify">
+        <p class="text-muted mt-2">by
+          <a href="http://localhost/wordpress/wordpress_lms_dev/media-skills-how-to-conduct-media/" class="font-weight-bold dark-grey-text">fleetadmin</a>, December 8, 2018
+        </p>
+        <!-- <h3>Course Description</h3> -->
+        <?php the_content(  ); ?>
+       
+        <h3>Topics</h3>
+        <div class="row">
+          <div class="col-md-12 col-lg-12 mb-5 bangla-font">
+          
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+            <?php 
+                $modules = cs_get_option('modules');
+                
+              ?>
 
-       </div>
-       <div class="col-4">
-            <div class="card pull-right short-info" style="width: 18rem">
-                <img
+              <?php if(!empty($modules)) : $id = 1; foreach($modules as $module) : $id++; ?>
+              <!-- Accordion card -->
+              <div class="card border-top border-bottom-0 border-left border-right border-light">
+                     
+                <!-- Card header -->
+                <div class="card-header border-bottom border-light" role="tab" id="headingOne1">
+                  <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                    <h5 class="font-weight-normal mb-0">
+                      Module <?php echo $id; ?>: <?php echo $module['module_title']; ?> <i class="fas fa-angle-down rotate-icon float-right"></i>
+                    </h5>
+                  </a>
+                </div>
+        
+                <!-- Card body -->
+                <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                  <div class="card-body">
+                   <p><i class="fas fa-file"></i> Note :  1</p>
+                   <p><i class="fas fa-play-circle"></i> Video :  1</p>
+                  </div>
+                </div>
+        
+              </div>
+              <!-- Accordion card -->
+
+              <?php endforeach; endif; ?>
+        
+              <!-- Accordion card -->
+              <div class="card border-bottom-0 border-left border-right border-light">
+        
+                <!-- Card header -->
+                <div class="card-header border-bottom border-light" role="tab" id="headingTwo2">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                    <h5 class="black-text font-weight-normal mb-0">
+                      Module 2: Module 2 Title <i class="fas fa-angle-down rotate-icon float-right"></i>
+                    </h5>
+                  </a>
+                </div>
+        
+                <!-- Card body -->
+                <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                  <div class="card-body">
+                    <p><i class="fas fa-file"></i> Note :  2</p>
+                    <p><i class="fas fa-play-circle"></i> Video :  2</p>             
+                  </div>
+                </div>
+        
+              </div>
+              <!-- Accordion card -->
+        
+              <!-- Accordion card -->
+              <div class="card border-bottom-0 border-left border-right border-light">
+        
+                <!-- Card header -->
+                <div class="card-header border-bottom border-light" role="tab" id="headingThree3">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                    <h5 class="black-text font-weight-normal mb-0">
+                      Module 3: Module 3 Title <i class="fas fa-angle-down rotate-icon float-right"></i>
+                    </h5>
+                  </a>
+                </div>
+        
+                <!-- Card body -->
+                <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                  <div class="card-body">
+                    <p><i class="fas fa-file"></i> Note :  3</p>
+                    <p><i class="fas fa-play-circle"></i> Video :  3</p>
+                  </div>
+                </div>
+        
+              </div>
+              <!-- Accordion card -->
+              
+              <!-- Accordion card -->
+              <div class="card border-left border-right border-light">
+                <!-- Card header -->
+                <div class="card-header border-bottom border-light" role="tab" id="heading4">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    <h5 class="black-text font-weight-normal mb-0">
+                      Module 4: Module 4 Title <i class="fas fa-angle-down rotate-icon float-right"></i>
+                    </h5>
+                  </a>
+                </div>
+                <!-- Card body -->
+                <div id="collapse4" class="collapse" role="tabpanel" aria-labelledby="heading4" data-parent="#accordionEx">
+                  <div class="card-body">
+                    <p><i class="fas fa-file"></i> Note :  4</p>
+                    <p><i class="fas fa-play-circle"></i> Video :  4</p>
+         
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion card -->
+        
+              <!-- Accordion card -->
+              <div class="card border-left border-right border-light">
+                <!-- Card header -->
+                <div class="card-header border-bottom border-light" role="tab" id="heading5">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    <h5 class="black-text font-weight-normal mb-0">
+                      Module 5: Module 5 Title <i class="fas fa-angle-down rotate-icon float-right"></i>
+                    </h5>
+                  </a>
+                </div>
+                <!-- Card body -->
+                <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5" data-parent="#accordionEx">
+                  <div class="card-body">
+                    <p><i class="fas fa-file"></i> Note :  5</p>
+                    <p><i class="fas fa-play-circle"></i> Video :  5</p>
+                  </div>
+                </div>
+              </div>
+              <!-- Accordion card -->     
+                           
+              
+            </div>
+            <!-- Accordion wrapper -->
+            
+          </div>
+        
+        </div>
+      </div>
+       <div class="col-lg-4 col-md-4 col-12">
+            <div class="card pull-right short-info justify-content-end" style="width: 18rem">
+                <!-- <img
                 src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
                 class="card-img-top"
                 alt="..."
-                />
+                /> -->
+                <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '288,170') ); ?>
+
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">Course Short info</h5>
                 <p class="card-text">
-                    Some quick example text to build on the card title and make up the bulk of the
-                    card's content.
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
                 </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item">Total Classes: 15</li>
+                  <li class="list-group-item">Duration: 6 Month</li>
+                  <li class="list-group-item"><strong>Teacher: </strong> Kabir Anwar</li>
                 </ul>
-                <div class="card-body">
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <div class="card-body mx-auto">
+                <!-- <a href="#" class="card-link">Card link</a> -->
+                <a href="#" class="btn btn-info">Enroll Now</a>
                 </div>
             </div>
        </div>
+      </div>
    </section>
-
-<div class="container">
-	<?php the_content(  ); ?>
-</div>

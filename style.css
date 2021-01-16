@@ -8,12 +8,18 @@ Author URI: https://github.com/abdullahalharun/
 */
 
 /* Font import */
-@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap');
 .bangla-font{
 	font-family: 'Hind Siliguri', sans-serif;
+	/* font-size: 20px; */
+
 }
-.n2-ow{
-	font-family: 'Hind Siliguri', sans-serif;
+
+
+
+@font-face{
+    font-family: 'Hind Siliguri';
+    src: url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
 }
 
 /* Nav style */
@@ -82,6 +88,17 @@ li:hover ul.sub-menu{
   .card-avatar img {
 	width: 100px; }
 
+/* Sidebar styles */
+input [type=search] {
+    outline-offset: -2px;
+    -webkit-appearance: none;
+    border: 1px solid gray;
+    padding: 2px;
+    padding-left: 12px;
+}
+
+
+/* Footer Menu */
 #menu-footer-one{
 	list-style: none;
     padding-left: 0;
@@ -103,6 +120,7 @@ li:hover ul.sub-menu{
 .course-thumbnail{
 	max-height: 170px!important;
 }
+<<<<<<< HEAD
 
 /* course details page */
 
@@ -113,3 +131,5 @@ li:hover ul.sub-menu{
 		top: -13rem;
 	}
 }
+=======
+>>>>>>> a4c592b0fa89095d1913c56c20ea87ad9b1eb81f
