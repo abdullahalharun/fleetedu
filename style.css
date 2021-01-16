@@ -105,8 +105,11 @@ li:hover ul.sub-menu{
 }
 
 /* course details page */
-.short-info{
-	left: 57rem;
-    right: 1rem;
-    top: -11rem;
+
+@media (min-width: 600px){
+	.short-info{
+		left: 47rem;
+		right: 1rem;
+		top: -13rem;
+	}
 }
