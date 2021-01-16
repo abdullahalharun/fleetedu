@@ -96,7 +96,7 @@ function fleetedu_theme_custom_post() {
                 'name' => __( 'Courses' ),
                 'singular_name' => __( 'Course' )
             ),
-            'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
             'public' => true,
             'has_archive' => false,
         )
@@ -107,7 +107,7 @@ function fleetedu_theme_custom_post() {
                 'name' => __( 'Intensive Courses' ),
                 'singular_name' => __( 'Intensive Course' )
             ),
-            'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
             'public' => true,
             'has_archive' => false,
         )
@@ -119,7 +119,7 @@ function fleetedu_theme_custom_post() {
                 'name' => __( 'Events' ),
                 'singular_name' => __( 'Event' )
             ),
-            'supports' => array('title', 'editor', 'custom-fields', 'thumbnail', 'page-attributes'),
+            'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'page-attributes'),
             'public' => true,
             'has_archive' => false,
         )

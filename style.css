@@ -61,6 +61,9 @@ li:hover ul.sub-menu{
     background: linear-gradient(to 45deg,rgba(29,236,197,.7),rgba(91,14,214,.7) 100%);
 }
 
+.home_slider{
+	margin-top: 4rem;
+}
 
 .page-footer {
 	background-color: #114A7C; }
@@ -120,16 +123,3 @@ input [type=search] {
 .course-thumbnail{
 	max-height: 170px!important;
 }
-<<<<<<< HEAD
-
-/* course details page */
-
-@media (min-width: 600px){
-	.short-info{
-		left: 47rem;
-		right: 1rem;
-		top: -13rem;
-	}
-}
-=======
->>>>>>> a4c592b0fa89095d1913c56c20ea87ad9b1eb81f

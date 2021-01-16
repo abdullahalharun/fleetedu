@@ -5,7 +5,7 @@ Template Name: Homepage Template
 get_header(); ?>
 
     <!--Main Navigation-->
-    <header class="card">
+    <header class="card home_slider">
         <?php
           $slider_id = cs_get_option('smart_slider_id');
           echo do_shortcode('[smartslider3 slider="'.$slider_id.'"]');

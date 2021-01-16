@@ -15,6 +15,29 @@
 	</div>
 </header>
 
+<?php 
+  $course_meta = get_post_meta(get_the_ID(), 'event_meta_info', true);
+  if(array_key_exists('short_info', $course_meta)) {
+    $short_info = $course_meta['short_info'];
+  } else {
+    $short_info = '';
+  }
+  if(array_key_exists('infos', $course_meta)) {
+    $infos = $course_meta['infos'];
+  } else {
+    $infos = '';
+  }
+  if(array_key_exists('enroll_link', $course_meta)) {
+    $enroll_link = $course_meta['enroll_link'];
+  } else {
+    $enroll_link = '';
+  }
+  if(array_key_exists('modules', $course_meta)) {
+    $modules = $course_meta['modules'];
+  } else {
+    $modules = '';
+  }
+?>
     <!-- Course details -->
     <section class="course-details container">
      <div class="row">
@@ -22,7 +45,7 @@
         <p class="text-muted mt-2">by
           <a href="http://localhost/wordpress/wordpress_lms_dev/media-skills-how-to-conduct-media/" class="font-weight-bold dark-grey-text">fleetadmin</a>, December 8, 2018
         </p>
-        <h3>Course Description</h3>
+
         <?php the_content(  ); ?>
 
         <h3>Topics</h3>
@@ -37,15 +60,13 @@
       </div>
        <div class="col-lg-4 col-md-4 col-12">
             <div class="card pull-right short-info justify-content-end" style="width: 18rem">
-                <img
-                src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
-                class="card-img-top"
-                alt="..."
-                />
+
+              <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '288,170') ); ?>
+
                 <div class="card-body">
-                <h5 class="card-title">Event Short info</h5>
+                <h5 class="card-title"><?php echo $short_info_title; ?></h5>
                 <p class="card-text">
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                  <?php echo $short_info; ?> 
                 </p>
                 </div>
                 <ul class="list-group list-group-flush">
