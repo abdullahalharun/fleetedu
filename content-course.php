@@ -110,7 +110,7 @@
                 </ul>
                 <div class="card-body mx-auto">
                 <!-- <a href="#" class="card-link">Card link</a> -->
-                <a href="<?php echo $enroll_link; ?>" class="btn btn-info">Enroll Now</a>
+                <a href="<?php echo get_home_url(); ?>/?add-to-cart=<?php echo $enroll_link; ?>" class="btn btn-info">Enroll Now</a>
                 </div>
             </div>
        </div>
