@@ -86,7 +86,7 @@
         
         </div>
       </div>
-       <div class="col-lg-4 col-md-4 col-12">
+       <div class="col-lg-4 col-md-4 col-12 mb-4">
             <div class="card pull-right short-info justify-content-end" style="width: 18rem">
                 <!-- <img
                 src="https://mdbootstrap.com/img/new/standard/city/062.jpg"
