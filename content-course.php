@@ -13,25 +13,27 @@
 
 <?php 
   $course_meta = get_post_meta(get_the_ID(), 'course_meta_info', true);
-  if(array_key_exists('short_info', $course_meta)) {
-    $short_info = $course_meta['short_info'];
-  } else {
-    $short_info = '';
-  }
-  if(array_key_exists('infos', $course_meta)) {
-    $infos = $course_meta['infos'];
-  } else {
-    $infos = '';
-  }
-  if(array_key_exists('enroll_link', $course_meta)) {
-    $enroll_link = $course_meta['enroll_link'];
-  } else {
-    $enroll_link = '';
-  }
-  if(array_key_exists('modules', $course_meta)) {
-    $modules = $course_meta['modules'];
-  } else {
-    $modules = '';
+  if(!empty($course_meta)){
+    if(array_key_exists('short_info', $course_meta)) {
+      $short_info = $course_meta['short_info'];
+    } else {
+      $short_info = '';
+    }
+    if(array_key_exists('infos', $course_meta)) {
+      $infos = $course_meta['infos'];
+    } else {
+      $infos = '';
+    }
+    if(array_key_exists('enroll_link', $course_meta)) {
+      $enroll_link = $course_meta['enroll_link'];
+    } else {
+      $enroll_link = '';
+    }
+    if(array_key_exists('modules', $course_meta)) {
+      $modules = $course_meta['modules'];
+    } else {
+      $modules = '';
+    }
   }
 ?>
 

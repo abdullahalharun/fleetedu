@@ -210,7 +210,7 @@ $options[]    = array(
 
     array(
       'name'   => 'section_1',
-      'title'     => 'Home',
+      'title'     => 'Course Meta',
       'fields' => array(
         
         array(
@@ -240,15 +240,17 @@ $options[]    = array(
           ),
         ),
         array(
-          'id'    => 'enroll_link',
+          'id'    => 'product_id',
           'type'  => 'text',
-          'title' => 'Enroll Link',
-          'label' => 'Enter enroll link.',
+          'title' => 'Product ID',
+          'label' => 'Enter Product ID.',
         ),       
 
       ),
     ),
     
+    // Group field for modules 
+    /*
     array(
       'name'   => 'section_2',
       'title'     => 'Course Modules',
@@ -277,6 +279,8 @@ $options[]    = array(
 
       ),
     ),
+
+    */
 
   ),
 );
