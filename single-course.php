@@ -79,12 +79,12 @@
                   <?php endforeach; endif; ?>
                 </ul>
                 <div class="card-body mx-auto">
-				<!-- <a href="#" class="card-link">Card link</a> -->
-				<?php if(!empty($product_id)) { ?>
-					<a href="<?php echo get_home_url(); ?>/?add-to-cart=<?php echo $product_id; ?>" class="btn btn-info">Enroll Now</a>
-				<?php } else { ?>
-					<a href="#" class="btn btn-info">Enroll Now</a>
-				<?php } ?>
+                  <!-- <a href="#" class="card-link">Card link</a> -->
+                  <?php if(!empty($product_id)) { ?>
+                    <a href="<?php echo get_home_url(); ?>/?add-to-cart=<?php echo $product_id; ?>" class="btn btn-info">Enroll Now</a>
+                  <?php } else { ?>
+                    <a href="#" class="btn btn-info">Enroll Now</a>
+                  <?php } ?>
 
                 </div>
             </div>
