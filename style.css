@@ -15,8 +15,6 @@ Author URI: https://github.com/abdullahalharun/
 
 }
 
-
-
 @font-face{
     font-family: 'Hind Siliguri';
     src: url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@500&display=swap');
@@ -122,4 +120,61 @@ input [type=search] {
 
 .course-thumbnail{
 	max-height: 170px!important;
+}
+
+/* Cart Page Style */
+
+#coupon_code{
+	width: auto;
+    height: calc(1.2em + 0.75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+/* Checkout Style */
+#customer_details .input-text {
+    display: block;
+	width: 100%;	
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.select2-selection .select2-selection--single {
+    display: block;
+	width: 100%;	
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+
+.woocommerce-billing-fields label {
+	width: -webkit-fill-available!important;
+}
+.woocommerce-additional-fields label {
+	width: -webkit-fill-available!important;
+}
+
+.woocommerce-input-wrapper {
+	width: -webkit-fill-available!important;
 }
