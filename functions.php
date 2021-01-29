@@ -11,7 +11,6 @@ require_once('inc/template-tags.inc.php');
  */
 function theme_enqueue_scripts() {
         wp_enqueue_style( 'test-theme-style', get_stylesheet_uri(), array(), '1.0.0' );
-        wp_enqueue_style( 'woocommerce-theme-style', get_template_directory_uri() . '/woocommerce.css' );
         wp_enqueue_style( 'Font_Awesome', 'https://use.fontawesome.com/releases/v5.6.1/css/all.css' );
         wp_enqueue_style( 'Bootstrap_css', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
         wp_enqueue_style( 'MDB', get_template_directory_uri() . '/assets/css/mdb.min.css' );
