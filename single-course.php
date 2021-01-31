@@ -66,10 +66,10 @@
                 <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '288,170') ); ?>
 
                 <div class="card-body">
-                <h5 class="card-title"><?php echo $short_info_title; ?></h5>
-                <p class="card-text">
-                  <?php echo $short_info; ?>
-                </p>
+                  <h5 class="card-title"><?php echo $short_info_title; ?></h5>
+                  <p class="card-text">
+                    <?php echo $short_info; ?>
+                  </p>
                 </div>
                 <ul class="list-group list-group-flush">
                   <?php if(!empty($infos)) : foreach($infos as $info) : ?>
@@ -87,6 +87,7 @@
                   <?php } ?>
 
                 </div>
+                
             </div>
        </div>
       </div>
