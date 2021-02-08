@@ -85,7 +85,7 @@
                                        $args = array(
                                         'fields' => apply_filters(
                                             'comment_form_default_fields', array(
-                                                'author' =>'
+                                                'author' =>' 
 
                                                 <!-- Name -->
                                                 <label for="name">'. __( 'Your name' ) . ( $req ? '<span class="required">*</span>' : '' )  .' </label>
