@@ -132,7 +132,7 @@ $options[]      = array(
       'default' => '~ রাসূলুল্লাহ সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম (বুখারী ও মুসলিম)',
     ),
     
-    array(
+     array(
       'id'        => 'quotations',
       'type'      => 'group',
       'title'     => 'Quotes',
@@ -152,6 +152,26 @@ $options[]      = array(
       ),
       'dependency'  => array( 'enable_quote_section', '==', 'true'),
     ),
+    
+        
+  ), // end: fields
+  
+);
+
+$options[]      = array(
+  'name'        => 'ItqaanEvents',
+  'title'       => 'Events',
+  'icon'        => 'fa fa-star',
+
+  'fields'      => array(
+
+    array(
+      'id'      => 'enable_event_section',
+      'type'    => 'switcher',
+      'title'   => 'Enable Event Section',
+      'help'    => 'Enable Event Section',
+      'default' => true,
+    ),   
     
         
   ), // end: fields

@@ -74,13 +74,11 @@ get_header(); ?>
       </div>
     </div> -->
 
-    <?php 
-      
+    <?php       
       $enable_quote_section = cs_get_option('enable_quote_section');
       $quote1 = cs_get_option('quote1');
       $quote1person = cs_get_option('quote1person');
       $qoutes = cs_get_option('quotations');
-
     ?>
 
     <!-- Quotation Section Carousel-->
@@ -91,7 +89,7 @@ get_header(); ?>
             <ol class="carousel-indicators">
               <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="0" class="active"></li>
               
-              <?php if(!empty($qoutes)) : $id = 0; foreach($qoutes as $q) : $id++;?>
+              <?php if(!empty($qoutes)) : $id = 0; foreach($qoutes as $q) : $id++; ?>
                 <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="<?php echo $id; ?>"></li>
                 <!-- <li data-mdb-target="#carouselExampleCaptions" data-mdb-slide-to="2"></li> -->
               <?php endforeach; endif; ?>
@@ -168,12 +166,12 @@ get_header(); ?>
                 <div class="card-body">
 
                   <!--Title-->
-                  <h4 class="card-title darkgrey-text">
+                  <h4 class="card-title darkgrey-text bangla-font">
                     <strong><?php the_title(); ?></strong>
                   </h4>
                   <hr>
                   <!--Text-->
-                  <p class="font-small"><?php the_excerpt(); ?> </p>
+                  <p class="font-small bangla-font"><?php the_excerpt(); ?> </p>
                   <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
                     <p class="waves-effect p-2 font-small blue-text mb-0">View details
                       <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
@@ -236,12 +234,12 @@ get_header(); ?>
                 <div class="card-body">
 
                   <!--Title-->
-                  <h4 class="card-title darkgrey-text">
+                  <h4 class="card-title darkgrey-text bangla-font">
                     <strong><?php the_title(); ?></strong>
                   </h4>
                   <hr>
                   <!--Text-->
-                  <p class="font-small"><?php the_excerpt(); ?> </p>
+                  <p class="font-small bangla-font"><?php the_excerpt(); ?> </p>
                   <a href="#" class="black-text d-flex flex-row-reverse">
                     <p class="waves-effect p-2 font-small blue-text mb-0">Coming soon
                       <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
@@ -317,72 +315,57 @@ get_header(); ?>
     
 
     <!-- Events -->
-    <div style="background-color: #e6e6e6;" class="container-fluid background-r">
-      <div class="container py-3">
+    <?php if($enable_event_section == true) : ?>
+      <div style="background-color: #e6e6e6;" class="container-fluid background-r">
+        <div class="container py-3">
 
-        <!--Section: Blog v.2-->
-        <section class="extra-margins text-center">
+          <section class="extra-margins text-center">
+            <h2 class="text-center mb-5 my-3 pt-4 pb-4 font-weight-bold">Itqaan Events</h2>
+            <div class="row mb-5 pb-3">
+            
+              <?php
+              global $post;
+              $args = array( 'posts_per_page' => 8, 'post_type'=> 'event', 'orderby' => 'menu_order', 'order' => 'ASC' );
+              $events = get_posts( $args );
+              foreach( $events as $post ) : setup_postdata($post); 
+              
+              ?>
 
-          <h2 class="text-center mb-5 my-3 pt-4 pb-4 font-weight-bold">Itqaan Events</h2>
+              <div class="col-lg-6 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
 
-          <!--Grid row-->
-          <div class="row mb-5 pb-3">
+                <div class="card">
+                  <div class="view overlay">
+                    <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '540,170') ); ?>
+                    <a href="<?php echo get_permalink() ?>">
+                      <div class="mask rgba-white-slight waves-effect waves-light"></div>
+                    </a>
+                  </div>
 
-          <?php
-          global $post;
-          $args = array( 'posts_per_page' => 8, 'post_type'=> 'event', 'orderby' => 'menu_order', 'order' => 'ASC' );
-          $events = get_posts( $args );
-          foreach( $events as $post ) : setup_postdata($post); 
-          
-          ?>
+                  <div class="card-body">
 
-            <!--Grid column-->
-            <div class="col-lg-6 col-md-6 mb-4 wow fadeIn" data-wow-delay="0.4s" style="visibility: visible; animation-name: fadeIn; animation-delay: 0.4s;">
-
-              <!--Card Light-->
-              <div class="card">
-                <!--Card image-->
-                <div class="view overlay">
-                  <?php the_post_thumbnail(  array('class' => 'course-thumbnail', 'class' => 'card-img-top', '540,170') ); ?>
-                  <!-- <img src="http://itqaan.org/wp-content/uploads/2018/08/trinity-college-405783_1280.jpg" class="card-img-top" alt=""> -->
-                  <a href="<?php echo get_permalink() ?>">
-                    <div class="mask rgba-white-slight waves-effect waves-light"></div>
-                  </a>
+                    <h4 class="card-title darkgrey-text bangla-font">
+                      <strong><?php the_title(); ?></strong>
+                    </h4>
+                    <hr>
+                    <div class="font-small"><?php the_excerpt(); ?> </div>
+                    <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
+                      <p class="waves-effect p-2 font-small blue-text mb-0">View Details
+                        <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
+                      </p>
+                    </a>
+                  </div>
                 </div>
-                <!--/.Card image-->
-                <!--Card content-->
-                <div class="card-body">
 
-                  <!--Title-->
-                  <h4 class="card-title darkgrey-text bangla-font">
-                    <strong><?php the_title(); ?></strong>
-                  </h4>
-                  <hr>
-                  <!--Text-->
-                  <div class="font-small"><?php the_excerpt(); ?> </div>
-                  <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">View Details
-                      <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
-                    </p>
-                  </a>
-                </div>
-                <!--/.Card content-->
               </div>
-              <!--/.Card Light-->
+
+            <?php endforeach; wp_reset_query( ); ?>
 
             </div>
-            <!--Grid column-->
-
-          <?php endforeach; wp_reset_query( ); ?>
-
-          </div>
-          <!--First row-->
-
-        </section>
-        <!--Section: Blog v.2-->
-
+          </section>
+        </div>
       </div>
-    </div>
+    <?php endif; ?>
+    <!-- End Events -->
 
     <!-- Some stat section -->
     <div class="d-none streak streak-photo streak-long-2" style="background-image:url('https://mdbootstrap.com/img/Photos/Horizontal/Things/full page/img%20%287%29.jpg')">
@@ -523,7 +506,7 @@ get_header(); ?>
       </section>
 
       <!--Section: Articles-->
-      <section class="mt-4 mb-4" style="margin-top: 6px">
+      <section class="mt-4 mb-4" style="margin-top: 6px;">
         <div class="text-center container">
           <!--Section heading-->
           <h2 class="text-center mt-3 pt-4 font-weight-bold">Itqaan Blog</h2>

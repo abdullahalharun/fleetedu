@@ -48,10 +48,10 @@
     <!-- Course details -->
     <section class="course-details container">
      <div class="row">
-       <div class="col-12 col-md-8 text-justify">
-        <p class="text-muted mt-2">by
-          <a href="http://localhost/wordpress/wordpress_lms_dev/media-skills-how-to-conduct-media/" class="font-weight-bold dark-grey-text"><?php the_author(); ?></a>, <?php echo get_the_date(); ?>
-        </p>
+       <div class="col-12 col-md-8 mt-2 text-justify">
+        <!-- <p class="text-muted mt-2">by
+          <a href="#" class="font-weight-bold dark-grey-text"><?php the_author(); ?></a>, <?php echo get_the_date(); ?>
+        </p> -->
         <!-- <h3>Course Description</h3> -->
         <?php the_content(  ); ?>
                

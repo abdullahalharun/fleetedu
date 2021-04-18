@@ -86,7 +86,7 @@ if ( have_posts() ) {
 
                             <hr>
 
-                            <div class="post-content bangla-font">
+                            <div class="post-content bangla-font text-justify">
                                 <?php the_content(); ?>
                             </div>
 
