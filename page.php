@@ -16,7 +16,7 @@
 </header>
 
 
-<div class="container">
+<div class="container bangla-font text-justify">
 	<?php the_content(); ?>
 </div>
 
