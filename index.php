@@ -44,22 +44,6 @@
             <!--Section: Articles-->
             <section class="text-center">
 
-                <!--Section heading-->
-                <!-- <h1 class="h2 font-weight-bold my-4">Recent articles</h1> -->
-
-                <?php 
-
-                // if ( have_posts() ) : 
-                //     while ( have_posts() ) : the_post();
-                //         the_content();
-                //         echo 'Hello';
-                //     endwhile;
-                // else :
-                //     _e( 'Sorry, no posts matched your criteria.', 'textdomain' );
-                // endif;
-
-                ?>
-
                 <!--Grid row-->
                 <div class="row wow fadeIn">
                 <?php

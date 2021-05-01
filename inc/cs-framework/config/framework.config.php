@@ -159,6 +159,39 @@ $options[]      = array(
 );
 
 $options[]      = array(
+  'name'        => 'ItqaanBlog',
+  'title'       => 'Blog',
+  'icon'        => 'fa fa-star',
+
+  'fields'      => array(
+
+        
+     array(
+      'id'        => 'categories',
+      'type'      => 'group',
+      'title'     => 'Post by Category',
+      'button_title' => 'Add new Category',
+      'accordion_title' => 'Add new Category',
+      'fields'    => array(
+        array(
+          'id'    => 'category_title',
+          'type'  => 'text',
+          'title' => 'Category Title',
+        ),
+        array(
+          'id'    => 'category_name',
+          'type'  => 'text',
+          'title' => 'Category Name',
+        ),
+      ),
+    ),
+    
+        
+  ), // end: fields
+  
+);
+
+$options[]      = array(
   'name'        => 'ItqaanEvents',
   'title'       => 'Events',
   'icon'        => 'fa fa-star',

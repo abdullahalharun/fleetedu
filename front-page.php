@@ -240,8 +240,8 @@ get_header(); ?>
                   <hr>
                   <!--Text-->
                   <p class="font-small bangla-font"><?php the_excerpt(); ?> </p>
-                  <a href="#" class="black-text d-flex flex-row-reverse">
-                    <p class="waves-effect p-2 font-small blue-text mb-0">Coming soon
+                  <a href="<?php echo get_permalink() ?>" class="black-text d-flex flex-row-reverse">
+                    <p class="waves-effect p-2 font-small blue-text mb-0">View details
                       <i class="fas fa-long-arrow-alt-right ml-2" aria-hidden="true"></i>
                     </p>
                   </a>
