@@ -66,39 +66,61 @@ $options[]    = array(
 
       ),
     ),
-    
-    // Group field for modules 
-    /*
+
+  ),
+);
+
+// -----------------------------------------
+// Intensive Course Metabox Options                    -
+// -----------------------------------------
+$options[]    = array(
+  'id'        => 'course_meta_info',
+  'title'     => 'Custom Post Options',
+  'post_type' => 'intensive_course',
+  'context'   => 'normal',
+  'priority'  => 'default',
+  'sections'  => array(
+
     array(
-      'name'   => 'section_2',
-      'title'     => 'Course Modules',
-      'fields' => array(        
+      'name'   => 'section_1',
+      'title'     => 'Course Meta',
+      'fields' => array(
         
         array(
-          'id'        => 'modules',
+          'id'    => 'short_info',
+          'type'  => 'textarea',
+          'title' => 'Course Short Into',
+          'label' => 'Write course short info.',
+        ),        
+        array(
+          'id'        => 'infos',
           'type'      => 'group',
-          'title'     => 'Modules',
-          'button_title' => 'Add new module',
-          'accordion_title' => 'Add new module',
+          'title'     => 'Course Info',
+          'button_title' => 'Add new info',
+          'accordion_title' => 'Add new info',
           'fields'    => array(
             array(
-              'id'    => 'module_title',
+              'id'    => 'info_title',
               'type'  => 'text',
-              'title' => 'Module Title',
+              'title' => 'Info Title',
             ),
             array(
-              'id'    => 'module_text',
+              'id'    => 'info_text',
               'type'  => 'text',
-              'title' => 'Module Text',
+              'title' => 'Info Text',
             ),
 
           ),
         ),
+        array(
+          'id'    => 'product_id',
+          'type'  => 'text',
+          'title' => 'Product ID',
+          'label' => 'Enter Product ID.',
+        ),       
 
       ),
     ),
-
-    */
 
   ),
 );
