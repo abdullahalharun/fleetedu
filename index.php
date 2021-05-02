@@ -34,13 +34,81 @@
    <main>
         <div class="container">
 
-            <!--Section: Dynamic Content Wrapper-->
-            <section>
-              <div id="dynamic-content"></div>
+            <?php       
+                $categories = cs_get_option('categories');
+            ?>
+
+            <?php if(!empty($categories)) : foreach($categories as $category) : ?>
+            <!--Section: Articles-->
+            <h2 class="bangla-font" style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h2>
+            <hr>
+            <section class="text-center mb-4">
+                
+                <!--Grid row-->
+                <div class="row wow fadeIn">
+                <?php
+                $the_query = new WP_Query( array( 'category_name' => $category['category_name'], 'posts_per_page' => 10 ) );
+
+
+                if ( $the_query->have_posts() ) {
+                $counter = 1;
+                while ( $the_query->have_posts() ) {
+                    $the_query->the_post();
+                ?>
+
+                    <!--Grid column-->
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <!--Featured image-->
+                        <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
+                            <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
+                            <a href="<?php echo get_permalink(); ?>">
+                                <div class="mask"></div>
+                            </a>
+                        </div>
+
+                        <!--Excerpt-->
+                        <a href="" class="pink-text">
+                            <h6 class="mb-3 mt-4">
+                                <i class="fa fa-bolt"></i>
+                                <strong> <?php the_category(', '); ?></strong>
+                            </h6>
+                        </a>
+                        <h4 class="mb-3 font-weight-bold dark-grey-text bangla-font">
+                            <strong><?php the_title(); ?></strong>
+                        </h4>
+                        <p>by
+                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
+                        <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                    </div>
+                    <!--Grid column-->
+
+                <?php
+                if ($counter % 3 == 0) {
+                ?>
+                </div>
+                <!--Grid row-->
+                <!--Grid dynamic row-->
+                <div class="row wow fadeIn">
+                <?php
+                }
+                $counter++;
+                } // end while
+                } // end if
+
+                wp_reset_postdata();
+
+                ?>
+                </div>
+                <!--Grid row-->
+
+                <?php fleet_pagination(); ?>
 
             </section>
-            <!--Section: Dynamic Content Wrapper-->
+            <!--Section: Articles-->
 
+            <?php endforeach; else: ?>            
+            
             <!--Section: Articles-->
             <section class="text-center">
 
@@ -70,12 +138,12 @@
                                 <strong> <?php the_category(', '); ?></strong>
                             </h6>
                         </a>
-                        <h4 class="mb-3 font-weight-bold dark-grey-text">
+                        <h4 class="mb-3 font-weight-bold dark-grey-text bangla-font">
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
                             <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <div class="text-justify"><?php the_excerpt(); ?></div>
+                        <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
                         <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
                     <!--Grid column-->
@@ -100,6 +168,8 @@
 
             </section>
             <!--Section: Articles-->
+
+            <?php endif; ?>            
 
         </div>
     </main>

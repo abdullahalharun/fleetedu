@@ -45,7 +45,7 @@ Template Name: Blog Page Template
         ?>
             <?php if(!empty($categories)) : foreach($categories as $category) : ?>
             <!--Section: Articles-->
-            <h1 style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h1>
+            <h2 style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h2>
             <hr>
             <section class="text-center mb-4">
                 
@@ -78,12 +78,12 @@ Template Name: Blog Page Template
                                 <strong> <?php the_category(', '); ?></strong>
                             </h6>
                         </a>
-                        <h4 class="mb-3 font-weight-bold dark-grey-text">
+                        <h4 class="mb-3 font-weight-bold dark-grey-text bangla-font">
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
                             <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <div class="text-justify"><?php the_excerpt(); ?></div>
+                        <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
                         <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
                     <!--Grid column-->
@@ -114,19 +114,16 @@ Template Name: Blog Page Template
 
             <?php endforeach; else: ?>            
             
-            <!--Section: Articles-->            
+            <!--Section: Articles-->
             <section class="text-center">
 
                 <!--Grid row-->
                 <div class="row wow fadeIn">
                 <?php
-                $the_query = new WP_Query( array( 'category_name' => 'Courses', 'posts_per_page' => 10 ) );
-
-
-                if ( $the_query->have_posts() ) {
+                if ( have_posts() ) {
                 $counter = 1;
-                while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
+                while ( have_posts() ) {
+                the_post();
                 ?>
 
                     <!--Grid column-->
@@ -146,12 +143,12 @@ Template Name: Blog Page Template
                                 <strong> <?php the_category(', '); ?></strong>
                             </h6>
                         </a>
-                        <h4 class="mb-3 font-weight-bold dark-grey-text">
+                        <h4 class="mb-3 font-weight-bold dark-grey-text bangla-font">
                             <strong><?php the_title(); ?></strong>
                         </h4>
                         <p>by
                             <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <div class="text-justify"><?php the_excerpt(); ?></div>
+                        <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
                         <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
                     <!--Grid column-->
@@ -168,9 +165,6 @@ Template Name: Blog Page Template
                 $counter++;
                 } // end while
                 } // end if
-
-                wp_reset_postdata();
-
                 ?>
                 </div>
                 <!--Grid row-->
