@@ -147,13 +147,7 @@ if ( have_posts() ) {
                 <div class="card col-md-4 mb-4">
 
                     <!-- Sticky content -->
-                    <div class="sticky">
-                        <!--Section: Dynamic Content Wrapper-->
-                        <section>
-                          <div id="dynamic-content"></div>
-
-                        </section>
-                        <!--Section: Dynamic Content Wrapper-->
+                    <div class="sticky sidebar">                        
 
                         <!--Sidebar-->
                             <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>

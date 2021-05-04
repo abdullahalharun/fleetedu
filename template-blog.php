@@ -46,7 +46,7 @@ Template Name: Blog Page Template
             <?php if(!empty($categories)) : foreach($categories as $category) : ?>
             <!--Section: Articles-->
             <h2 style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h2>
-            <hr>
+           
             <section class="text-center mb-4">
                 
                 <!--Grid row-->
