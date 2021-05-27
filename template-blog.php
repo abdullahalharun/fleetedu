@@ -42,6 +42,11 @@ Template Name: Blog Page Template
 
         <?php       
             $categories = cs_get_option('categories');
+
+            $categories1 = get_categories();
+            foreach($categories1 as $category) {
+            echo '<div class="col-md-4"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></div>';
+            }
         ?>
             <?php if(!empty($categories)) : foreach($categories as $category) : ?>
             <!--Section: Articles-->
