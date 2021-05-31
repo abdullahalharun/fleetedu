@@ -39,6 +39,8 @@ function fleetedu_theme_supports(){
     // Add featured image support
     add_theme_support('post-thumbnails');
 
+    add_theme_support('category-thumbnails');
+
     // This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
@@ -73,6 +75,8 @@ function fleetedu_theme_supports(){
 				'flex-height' => true,
 			)
     );
+
+    
     
     add_theme_support( 'woocommerce' );
 
