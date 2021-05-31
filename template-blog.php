@@ -41,145 +41,70 @@ Template Name: Blog Page Template
         <div class="container">
 
         <?php       
-            $categories = cs_get_option('categories');
-
-            $categories1 = get_categories();
-            foreach($categories1 as $category) {
-            echo '<div class="col-md-4"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></div>';
-            }
+            
+            $categories = get_categories();
+            // foreach($categories as $category) {
+            // echo '<div class="col-md-4"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></div>';
+            // }
         ?>
-            <?php if(!empty($categories)) : foreach($categories as $category) : ?>
-            <!--Section: Articles-->
-            <h2 style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h2>
-           
-            <section class="text-center mb-4">
-                
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-                <?php
-                $the_query = new WP_Query( array( 'category_name' => $category['category_name'], 'posts_per_page' => 10 ) );
-
-
-                if ( $the_query->have_posts() ) {
-                $counter = 1;
-                while ( $the_query->have_posts() ) {
-                    $the_query->the_post();
-                ?>
-
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
-                            <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                            <a href="<?php echo get_permalink(); ?>">
-                                <div class="mask"></div>
-                            </a>
-                        </div>
-
-                        <!--Excerpt-->
-                        <a href="" class="pink-text">
-                            <h6 class="mb-3 mt-4">
-                                <i class="fa fa-bolt"></i>
-                                <strong> <?php the_category(', '); ?></strong>
-                            </h6>
-                        </a>
-                        <h4 class="mb-3 font-weight-bold dark-grey-text bangla-font">
-                            <strong><?php the_title(); ?></strong>
-                        </h4>
-                        <p>by
-                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
-                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
-                    </div>
-                    <!--Grid column-->
-
-                <?php
-                if ($counter % 3 == 0) {
-                ?>
-                </div>
-                <!--Grid row-->
-                <!--Grid dynamic row-->
-                <div class="row wow fadeIn">
-                <?php
-                }
-                $counter++;
-                } // end while
-                } // end if
-
-                wp_reset_postdata();
-
-                ?>
-                </div>
-                <!--Grid row-->
-
-                <?php fleet_pagination(); ?>
-
-            </section>
-            <!--Section: Articles-->
-
-            <?php endforeach; else: ?>            
             
             <!--Section: Articles-->
-            <section class="text-center">
+            <h2 style="border-bottom: 2px solid #28598d;">All Categories</h2>  
 
-                <!--Grid row-->
-                <div class="row wow fadeIn">
-                <?php
-                if ( have_posts() ) {
-                $counter = 1;
-                while ( have_posts() ) {
-                the_post();
-                ?>
+            <section class="mb-4">
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <?php foreach($categories as $category) : ?>
 
-                    <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <!--Featured image-->
-                        <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
-                            <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
-                            <a href="<?php echo get_permalink(); ?>">
-                                <div class="mask"></div>
-                            </a>
+                    <div class="col">
+                        <a href="<?php echo get_category_link($category->term_id); ?>">
+                        <div class="card">
+                        <!-- <img
+                            src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                            class="card-img-top"
+                            alt="..."
+                        /> -->
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $category->name; ?></h5>
+                            <p class="card-text">
+                            This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.
+                            </p>
                         </div>
-
-                        <!--Excerpt-->
-                        <a href="" class="pink-text">
-                            <h6 class="mb-3 mt-4">
-                                <i class="fa fa-bolt"></i>
-                                <strong> <?php the_category(', '); ?></strong>
-                            </h6>
+                        </div> 
                         </a>
-                        <h4 class="mb-3 font-weight-bold dark-grey-text bangla-font">
-                            <strong><?php the_title(); ?></strong>
-                        </h4>
-                        <p>by
-                            <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
-                        <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
-                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
                     </div>
-                    <!--Grid column-->
+                    
 
-                <?php
-                if ($counter % 3 == 0) {
-                ?>
-                </div>
-                <!--Grid row-->
-                <!--Grid dynamic row-->
-                <div class="row wow fadeIn">
-                <?php
-                }
-                $counter++;
-                } // end while
-                } // end if
-                ?>
-                </div>
-                <!--Grid row-->
+                    <?php endforeach; ?>                    
+                </div>                               
+                <hr>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <?php foreach($categories as $category) : ?>
 
-                <?php fleet_pagination(); ?>
+                    <div class="col">
+                        <a href="<?php echo get_category_link($category->term_id); ?>">
+                        <div class="card bg-light mb-3" style="max-width: 18rem;">
+                            <div class="card-header"><?php echo $category->name; ?></div>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo $category->name; ?></h5>
+                                <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the
+                                card's content.
+                                </p>
+                            </div>
+                        </div> 
+                        </a>
+                    </div>                    
+
+                    <?php endforeach; ?>                    
+                </div>                               
 
             </section>
-            <!--Section: Articles-->
+            <!--Section: Articles -->
 
-            <?php endif; ?>
+                            
+            </div>
+
             
 
         </div>
