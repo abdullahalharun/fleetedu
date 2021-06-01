@@ -48,10 +48,10 @@ Template Name: Blog Page Template
             // }
         ?>
             
-            <!--Section: Articles-->
+            <!--Section: Blog-->
             <h2 style="border-bottom: 2px solid #28598d;">All Categories</h2>  
 
-            <section class="mb-4">
+            <section class="mb-4 mt-4">
                 <div class="row row-cols-1 row-cols-md-3 g-4">
                     <?php foreach($categories as $category) : ?>
 
@@ -76,31 +76,10 @@ Template Name: Blog Page Template
                     
 
                     <?php endforeach; ?>                    
-                </div>                               
-                <hr>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <?php foreach($categories as $category) : ?>
-
-                    <div class="col">
-                        <a href="<?php echo get_category_link($category->term_id); ?>">
-                        <div class="card bg-light mb-3" style="max-width: 18rem;">
-                            <div class="card-header"><?php echo $category->name; ?></div>
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $category->name; ?></h5>
-                                <p class="card-text">
-                                Some quick example text to build on the card title and make up the bulk of the
-                                card's content.
-                                </p>
-                            </div>
-                        </div> 
-                        </a>
-                    </div>                    
-
-                    <?php endforeach; ?>                    
-                </div>                               
+                </div> 
 
             </section>
-            <!--Section: Articles -->
+            <!--Section: Blog -->
 
                             
             </div>

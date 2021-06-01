@@ -14,7 +14,7 @@
 </head>
 <body>
     <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar" <?php if ( is_user_logged_in() ) { echo 'style="margin-top: 32px"'; } ?> >
             <div class="container">
 
                 <!-- Brand -->
