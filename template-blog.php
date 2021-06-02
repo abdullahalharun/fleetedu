@@ -20,8 +20,7 @@ Template Name: Blog Page Template
                 <div class="col-md-6">
 
                     <h1 class="font-weight-bold mb-4">Itqaan Blog</h1>
-                    <p class="lead mb-4">Checkout our latest posts...
-                    </p>
+                    <p class="lead mb-4">Checkout our latest posts...</p>
 
                 </div>
                 <!--Grid column-->

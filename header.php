@@ -19,8 +19,13 @@
 
                 <!-- Brand -->
                 <a class="navbar-brand pt-0 waves-effect" href="<?php echo get_home_url(); ?>">
-                    <img height="48px" src="http://itqaan.org/wp-content/uploads/2020/12/ITQAN_logo.png" alt="Itqaan logo">
-                </a> 
+                    <!-- <img height="48px" src="http://itqaan.org/wp-content/uploads/2020/12/ITQAN_logo.png" alt="Itqaan logo"> -->
+                    <?php if ( function_exists( 'the_custom_logo' ) ) {
+                            the_custom_logo();
+                        } ?>
+                </a>
+
+              
 
                 
 

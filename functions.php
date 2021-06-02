@@ -69,10 +69,12 @@ function fleetedu_theme_supports(){
     add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 250,
-				'width'       => 250,
+				'height'      => 48,
+				'width'       => 200,
 				'flex-width'  => true,
 				'flex-height' => true,
+        'header-text'          => array( 'site-title', 'site-description' ),
+        'unlink-homepage-logo' => true,
 			)
     );
 

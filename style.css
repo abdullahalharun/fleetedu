@@ -33,6 +33,10 @@ Author URI: https://github.com/abdullahalharun/
 	background-color: rgba(0,0,0,0.1);
 }
 
+.custom-logo {
+  width: 200px;
+}
+
 ul .sub-menu{
 	position: absolute;
     margin-top: 0;
