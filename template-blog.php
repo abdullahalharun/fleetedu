@@ -46,7 +46,7 @@ Template Name: Blog Page Template
             // echo '<div class="col-md-4"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></div>';
             // }
         ?>
-            
+                    
             <!--Section: Blog-->
             <h2 style="border-bottom: 2px solid #28598d;">All Categories</h2>  
 
@@ -57,16 +57,20 @@ Template Name: Blog Page Template
                     <div class="col">
                         <a href="<?php echo get_category_link($category->term_id); ?>">
                         <div class="card">
-                        <!-- <img
-                            src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                        <?php 
+                            $image = get_field('category_image', $category->taxonomy . '_' . $category->term_id ); 
+                            if($image):
+                        ?>                                               
+                        <img
+                            src="<?php echo $image ?>"
                             class="card-img-top"
                             alt="..."
-                        /> -->
+                        />
+                        <?php endif; ?>
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $category->name; ?></h5>
                             <p class="card-text">
-                            This is a longer card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
+                            <?php echo $category->description ?>
                             </p>
                         </div>
                         </div> 
