@@ -1,3 +1,9 @@
+<?php
+/*
+Template Name: Blog Page Template
+*/
+?>
+
 <?php get_header(); ?>
 
     <header>
@@ -34,14 +40,18 @@
    <main>
         <div class="container">
 
-            <?php       
-                $categories = cs_get_option('categories');
-            ?>
+        <?php       
+            $categories = cs_get_option('categories');
 
+            $categories1 = get_categories();
+            foreach($categories1 as $category) {
+            echo '<div class="col-md-4"><a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a></div>';
+            }
+        ?>
             <?php if(!empty($categories)) : foreach($categories as $category) : ?>
             <!--Section: Articles-->
-            <h2 class="bangla-font" style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h2>
-            <hr>
+            <h2 style="border-bottom: 2px solid #28598d;"><?php echo $category['category_title']; ?></h2>
+           
             <section class="text-center mb-4">
                 
                 <!--Grid row-->
@@ -169,7 +179,8 @@
             </section>
             <!--Section: Articles-->
 
-            <?php endif; ?>            
+            <?php endif; ?>
+            
 
         </div>
     </main>

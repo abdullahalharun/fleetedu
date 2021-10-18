@@ -33,6 +33,10 @@ Author URI: https://github.com/abdullahalharun/
 	background-color: rgba(0,0,0,0.1);
 }
 
+.custom-logo {
+  width: 200px;
+}
+
 ul .sub-menu{
 	position: absolute;
     margin-top: 0;
@@ -98,6 +102,9 @@ input [type=search] {
     padding-left: 12px;
 }
 
+.search-form{
+  margin-top: 12px;
+}
 .search-field {
   display: block;
   width: 100%;	
@@ -112,6 +119,10 @@ input [type=search] {
   border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.sidebar ul li{
+  list-style: none;
 }
 
 
