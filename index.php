@@ -79,7 +79,7 @@
                         <p>by
                             <a href="<?php echo get_permalink(); ?>" class="font-weight-bold dark-grey-text"><?php echo get_the_author(); ?></a>, <?php echo get_the_date(); ?></p>
                         <div class="text-justify bangla-font"><?php the_excerpt(); ?></div>
-                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Read more</a>
+                        <a href="<?php echo get_permalink(); ?>" class="btn btn-info btn-rounded btn-md">Continue reading...</a>
                     </div>
                     <!--Grid column-->
 
@@ -122,7 +122,7 @@
                 ?>
 
                     <!--Grid column-->
-                    <div class="col-lg-4 col-md-12 mb-4">
+                    <div class="col-lg-4 col-md-12 mb-4 card card-body">
                         <!--Featured image-->
                         <div class="view overlay hm-white-slight rounded z-depth-2 mb-4">
                             <?php the_post_thumbnail( 'medium-large', array( 'class'=> 'img-fluid')); ?>
